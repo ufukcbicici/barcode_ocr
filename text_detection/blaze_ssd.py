@@ -327,10 +327,13 @@ class BlazeSsdDetector:
         train_paths, test_paths, = train_test_split(paths, test_size=test_ratio)
         training_images_path = os.path.join(root_path, "training_images.sav")
         test_images_path = os.path.join(root_path, "test_images.sav")
+        prior_boxes_path = os.path.join(root_path, "prior_boxes.sav")
         with open(training_images_path, "wb") as f:
             pickle.dump(train_paths, f)
         with open(test_images_path, "wb") as f:
             pickle.dump(test_paths, f)
+        with open(prior_boxes_path, "wb") as f:
+            pickle.dump(self.priorBoxes, f)
         # Save training - test set for later evaluation.
         train_iterator = \
             tf.data.Dataset.from_tensor_slices(train_paths).shuffle(buffer_size=100).batch(batch_size=batch_size)
