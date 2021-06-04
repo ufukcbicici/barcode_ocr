@@ -160,14 +160,15 @@ class BlazeSsdDetector:
         model = tf.keras.models.Model(inputs=inputs, outputs=[x_8, x11])
         return model
 
-    def convert_from_image_coords_to_normalized_coords(self, image, image_coords, verbose=False):
-        curr_ratio = image.shape[0] / image.shape[1]
+    def convert_from_image_coords_to_normalized_coords(self, image_shape, image_coords,
+                                                       image=None, verbose=False):
+        curr_ratio = image_shape[0] / image_shape[1]
         if curr_ratio <= self.inputShape[0] / self.inputShape[1]:
-            resize_ratio = self.inputShape[1] / image.shape[1]
-            resized_shape = [int(resize_ratio * image.shape[0]), self.inputShape[1]]
+            resize_ratio = self.inputShape[1] / image_shape[1]
+            resized_shape = [int(resize_ratio * image_shape[0]), self.inputShape[1]]
         else:
-            resize_ratio = self.inputShape[0] / image.shape[0]
-            resized_shape = [self.inputShape[0], int(resize_ratio * image.shape[1])]
+            resize_ratio = self.inputShape[0] / image_shape[0]
+            resized_shape = [self.inputShape[0], int(resize_ratio * image_shape[1])]
         image_coords_resized = resize_ratio * image_coords
         left = image_coords_resized[0]
         top = image_coords_resized[1]
@@ -177,6 +178,7 @@ class BlazeSsdDetector:
             [left / self.inputShape[1], top / self.inputShape[0],
              right / self.inputShape[1], bottom / self.inputShape[0]])
         if verbose:
+            assert image is not None
             image_resized = tf.image.resize(image, size=resized_shape)
             image_resized_padded = tf.image.pad_to_bounding_box(image_resized, 0, 0, self.inputShape[0],
                                                                 self.inputShape[1])
@@ -199,8 +201,9 @@ class BlazeSsdDetector:
             bb_image_coords_list = bounding_box_dict[file_path]
             for bb_image_coords in bb_image_coords_list:
                 bb_normalized_coords = \
-                    self.convert_from_image_coords_to_normalized_coords(image=image,
+                    self.convert_from_image_coords_to_normalized_coords(image_shape=image.shape,
                                                                         image_coords=bb_image_coords,
+                                                                        image=image,
                                                                         verbose=False)
                 bb_coords.append(bb_normalized_coords)
         bb_coords = np.stack(bb_coords, axis=0)
@@ -284,9 +287,10 @@ class BlazeSsdDetector:
         # self.detectorModel.load_weights(path)
         print("X")
 
-    def decode_and_augment_images(self, file_path, bb_list, augment):
+    def decode_and_augment_images(self, file_path, bb_list, augment, verbose=False):
         raw_file = tf.io.read_file(file_path)
         image = tf.io.decode_png(raw_file)
+        original_shape = image.shape.as_list()
         if augment:
             image = tf.image.random_brightness(image, self.brightness_max_delta)
             image = tf.image.random_contrast(image, lower=self.contrast_range[0], upper=self.contrast_range[1])
@@ -312,33 +316,28 @@ class BlazeSsdDetector:
         # Adjust bb coordinates
         adjusted_bb_list = []
         for bb in bb_list:
-            h = image_resized.shape.as_list()[0]
-            w = image_resized.shape.as_list()[1]
-            left = bb[0] * w
-            top = bb[1] * h
-            right = bb[2] * w
-            bottom = bb[3] * h
-            h2 = image_resized_padded.shape.as_list()[0]
-            w2 = image_resized_padded.shape.as_list()[1]
-            adjusted_bb_list.append(np.array([left / w2, top / h2, right / w2, bottom / h2]))
-
+            normalized_bb = self.convert_from_image_coords_to_normalized_coords(
+                image_shape=original_shape, image_coords=bb)
+            adjusted_bb_list.append(normalized_bb)
         # Comment out for visualization
-        # image_rgb = image.numpy()
-        # image_bgr = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
-        # cv2.imshow("Augmented Image", image_bgr)
-        #
-        # image_resized_padded_rgb = tf.cast(image_resized_padded, tf.uint8).numpy()
-        # image_resized_padded_bgr = cv2.cvtColor(image_resized_padded_rgb, cv2.COLOR_RGB2BGR)
-        # for bb in adjusted_bb_list:
-        #     h = image_resized_padded.shape.as_list()[0]
-        #     w = image_resized_padded.shape.as_list()[1]
-        #     left = int(bb[0] * w)
-        #     top = int(bb[1] * h)
-        #     right = int(bb[2] * w)
-        #     bottom = int(bb[3] * h)
-        #     cv2.rectangle(image_resized_padded_bgr, (left, top), (right, bottom), color=(0, 255, 0))
-        # cv2.imshow("Augmented Image with Resize and Pad", image_resized_padded_bgr)
-        # cv2.waitKey(0)
+        if verbose:
+            image_rgb = image.numpy()
+            image_bgr = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR)
+            cv2.imshow("Augmented Image", image_bgr)
+
+            image_resized_padded_rgb = tf.cast(image_resized_padded, tf.uint8).numpy()
+            image_resized_padded_bgr = cv2.cvtColor(image_resized_padded_rgb, cv2.COLOR_RGB2BGR)
+            for bb in adjusted_bb_list:
+                h = image_resized_padded.shape.as_list()[0]
+                w = image_resized_padded.shape.as_list()[1]
+                left = int(bb[0] * w)
+                top = int(bb[1] * h)
+                right = int(bb[2] * w)
+                bottom = int(bb[3] * h)
+                cv2.rectangle(image_resized_padded_bgr, (left, top), (right, bottom), color=(0, 255, 0))
+            cv2.imshow("Augmented Image with Resize and Pad", image_resized_padded_bgr)
+            cv2.waitKey(0)
+
         image_resized_padded = (1.0 / 255.0) * image_resized_padded
         return image_resized_padded, adjusted_bb_list, resize_ratio
 
@@ -380,7 +379,8 @@ class BlazeSsdDetector:
                         bb_list = training_set[file_path]
                         image, image_bb_list, _ = self.decode_and_augment_images(file_path=file_path,
                                                                                  bb_list=bb_list,
-                                                                                 augment=True)
+                                                                                 augment=True,
+                                                                                 verbose=False)
                         batch_images.append(image)
                         batch_bb_list.append(image_bb_list)
                     t1 = time.time()
@@ -427,7 +427,8 @@ class BlazeSsdDetector:
                     bb_list = training_set[file_path]
                     image, image_bb_list, resize_ratio = self.decode_and_augment_images(file_path=file_path,
                                                                                         bb_list=bb_list,
-                                                                                        augment=False)
+                                                                                        augment=False,
+                                                                                        verbose=False)
                     batch_images.append(image)
                     batch_bb_list.append(image_bb_list)
                     resize_ratios.append(resize_ratio)
