@@ -5,8 +5,11 @@ import time
 import os
 import shutil
 import pickle
+
+from sklearn_extra.cluster import KMedoids
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
+from collections import Counter
 
 # from blaze_face.align_bb_data import AlignBBData
 # from blaze_face.get_predicted_boxes import GetPredictedBoxes
@@ -21,7 +24,10 @@ from utils import Utils
 
 
 class BlazeSsdDetector:
-    def __init__(self, model_name, model_path, input_shape, prior_boxes,
+    def __init__(self,
+                 model_name,
+                 model_path,
+                 input_shape,
                  anchor_boxes=(2, 6),
                  brightness_max_delta=0.25,
                  contrast_range=(0.9, 1.1),
@@ -39,11 +45,12 @@ class BlazeSsdDetector:
         self.backboneModel = self.network(input_shape=self.inputShape)
         self.confidenceOutput = None
         self.bbRegressionOutput = None
+        self.alignBBDataLayer = None
         self.detectorModel = None
-        self.priorBoxes = prior_boxes
-        self.priorBoxes = sorted(self.priorBoxes, key=lambda bb: bb[0] * bb[1])
-        self.priorBoxes = np.stack(self.priorBoxes, axis=0)
-        assert sum(self.anchorBoxes) == self.priorBoxes.shape[0]
+        # self.priorBoxes = prior_boxes
+        # self.priorBoxes = sorted(self.priorBoxes, key=lambda bb: bb[0] * bb[1])
+        # self.priorBoxes = np.stack(self.priorBoxes, axis=0)
+        # assert sum(self.anchorBoxes) == self.priorBoxes.shape[0]
         self.priorBoxTensors = []
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3)
         self.lossTracker = tf.keras.metrics.Mean(name="loss_tracker")
@@ -153,7 +160,60 @@ class BlazeSsdDetector:
         model = tf.keras.models.Model(inputs=inputs, outputs=[x_8, x11])
         return model
 
-    def build_detector(self):
+    def convert_from_image_coords_to_normalized_coords(self, image, image_coords, verbose=False):
+        curr_ratio = image.shape[0] / image.shape[1]
+        if curr_ratio <= self.inputShape[0] / self.inputShape[1]:
+            resize_ratio = self.inputShape[1] / image.shape[1]
+            resized_shape = [int(resize_ratio * image.shape[0]), self.inputShape[1]]
+        else:
+            resize_ratio = self.inputShape[0] / image.shape[0]
+            resized_shape = [self.inputShape[0], int(resize_ratio * image.shape[1])]
+        image_coords_resized = resize_ratio * image_coords
+        left = image_coords_resized[0]
+        top = image_coords_resized[1]
+        right = image_coords_resized[2]
+        bottom = image_coords_resized[3]
+        image_coords_normalized = np.array(
+            [left / self.inputShape[1], top / self.inputShape[0],
+             right / self.inputShape[1], bottom / self.inputShape[0]])
+        if verbose:
+            image_resized = tf.image.resize(image, size=resized_shape)
+            image_resized_padded = tf.image.pad_to_bounding_box(image_resized, 0, 0, self.inputShape[0],
+                                                                self.inputShape[1])
+            image_resized_padded_bgr = tf.cast(image_resized_padded, tf.uint8).numpy()
+            left_verbose = int(image_coords_normalized[0] * self.inputShape[1])
+            top_verbose = int(image_coords_normalized[1] * self.inputShape[0])
+            right_verbose = int(image_coords_normalized[2] * self.inputShape[1])
+            bottom_verbose = int(image_coords_normalized[3] * self.inputShape[0])
+            cv2.rectangle(image_resized_padded_bgr, (left_verbose, top_verbose),
+                          (right_verbose, bottom_verbose), color=(0, 255, 0))
+            cv2.imshow("Normalized Coords", image_resized_padded_bgr)
+            cv2.waitKey(0)
+        return image_coords_normalized
+
+    def cluster_bounding_boxes(self, bounding_box_dict):
+        cluster_count = sum(self.anchorBoxes)
+        bb_coords = []
+        for file_path in tqdm(bounding_box_dict.keys()):
+            image = cv2.imread(file_path)
+            bb_image_coords_list = bounding_box_dict[file_path]
+            for bb_image_coords in bb_image_coords_list:
+                bb_normalized_coords = \
+                    self.convert_from_image_coords_to_normalized_coords(image=image,
+                                                                        image_coords=bb_image_coords,
+                                                                        verbose=False)
+                bb_coords.append(bb_normalized_coords)
+        bb_coords = np.stack(bb_coords, axis=0)
+        kmedoids = KMedoids(n_clusters=cluster_count)
+        widths = bb_coords[:, 2] - bb_coords[:, 0]
+        heights = bb_coords[:, 3] - bb_coords[:, 1]
+        bb_dimensions = np.stack([widths, heights], axis=1)
+        kmedoids.fit(X=bb_dimensions)
+        counter = Counter(kmedoids.labels_)
+        print("counter={0}".format(counter))
+        return kmedoids.cluster_centers_
+
+    def build_detector(self, bounding_box_dict):
         # Confidence outputs for anchor boxes
         self.confidenceOutput = []
         assert len(self.backboneModel.output) == len(self.anchorBoxes)
@@ -180,22 +240,19 @@ class BlazeSsdDetector:
         # self.bbRegressionOutput = tf.keras.layers.Concatenate(axis=1)(bb_regression_outputs)
         # output_combined = tf.keras.layers.Concatenate(axis=-1)([self.confidenceOutput, self.bbRegressionOutput])
 
-        # self.detectorModel = tf.keras.models.Model(inputs=self.backboneModel.input, outputs=output_combined)
-        self.detectorModel = tf.keras.models.Model(inputs=self.backboneModel.input, outputs=[self.confidenceOutput,
-                                                                                             self.bbRegressionOutput])
         # Determine the prior boxes, for each detector output location in the corresponding feature maps
+        prior_boxes = self.cluster_bounding_boxes(bounding_box_dict=bounding_box_dict)
         self.priorBoxTensors = []
         output_indices = []
         for output_id, anchor_count in enumerate(self.anchorBoxes):
             output_indices.extend([output_id] * anchor_count)
 
-        assert len(output_indices) == self.priorBoxes.shape[0]
-        for anchor_id, prior in enumerate(self.priorBoxes):
+        assert len(output_indices) == prior_boxes.shape[0]
+        for anchor_id, prior in enumerate(prior_boxes):
             # Select the respective backbone output for this anchor
             curr_output_id = output_indices[anchor_id]
             output_shape = self.backboneModel.output[curr_output_id].shape
             # Calculate each prior corresponding to a feature map location
-            # TODO: Control this: width and height seems to be confused
             w = output_shape[2]
             h = output_shape[1]
             priors_tensor = np.zeros(shape=(h, w, 4))
@@ -210,42 +267,14 @@ class BlazeSsdDetector:
                     priors_tensor[pi, pj] = np.array([left, top, right, bottom])
             self.priorBoxTensors.append(tf.constant(priors_tensor))
 
-    def normalize_image(self, image_path, bb_list, edge_size):
-        # path = image_path.numpy().decode("utf-8")
-        path = image_path
-        image = cv2.imread(path)
-        # Resize the image
-        resized_image, ratio = Utils.resize_wrt_to_longest_edge(image=image, longest_edge=edge_size)
-        # Zero pad the image
-        padded_image = np.zeros(shape=(edge_size, edge_size, 3), dtype=resized_image.dtype)
-        padded_image[0:resized_image.shape[0], 0:resized_image.shape[1], :] = resized_image
-        normalized_image = padded_image
-        bb_normalized_coords = []
-        for bb in bb_list:
-            bb_arr = np.array([bb[0], bb[1], bb[2], bb[3]])
-            bb_arr = ratio * bb_arr
-            bb_arr = (1.0 / edge_size) * bb_arr
-            # Comment this out; only for visualizing purposes
-            # left = int(bb_arr[0] * edge_size)
-            # top = int(bb_arr[1] * edge_size)
-            # right = int(bb_arr[2] * edge_size)
-            # bottom = int(bb_arr[3] * edge_size)
-            # cv2.rectangle(img_clone, (left, top), (right, bottom), color=(0, 255, 0))
-            bb_normalized_coords.append(bb_arr)
-        return normalized_image, bb_normalized_coords
-
-    def get_tensors_bb_list(self, bb_dict, image_paths, edge_size):
-        image_list = []
-        bb_list = []
-        for img_path in image_paths:
-            path = img_path.numpy().decode("utf-8")
-            bbs = bb_dict[path]
-            normalized_image, bb_normalized_coords = self.normalize_image(image_path=path,
-                                                                          bb_list=bbs,
-                                                                          edge_size=edge_size)
-            image_list.append(normalized_image)
-            bb_list.append(bb_normalized_coords)
-        return image_list, bb_list
+        # Prepare the output of the detector model
+        # X = tf.stack(batch_images, axis=0)
+        self.alignBBDataLayer = AlignBBData(prior_box_tensors=self.priorBoxTensors)
+        confidences_reshaped, regression_reshaped, prior_boxes_reshaped = \
+            self.alignBBDataLayer((self.confidenceOutput, self.bbRegressionOutput))
+        self.detectorModel = tf.keras.models.Model(
+            inputs=self.backboneModel.input,
+            outputs=[confidences_reshaped, regression_reshaped, prior_boxes_reshaped])
 
     def save_model(self, path):
         self.detectorModel.save(path)
@@ -311,7 +340,7 @@ class BlazeSsdDetector:
         # cv2.imshow("Augmented Image with Resize and Pad", image_resized_padded_bgr)
         # cv2.waitKey(0)
         image_resized_padded = (1.0 / 255.0) * image_resized_padded
-        return image_resized_padded, adjusted_bb_list
+        return image_resized_padded, adjusted_bb_list, resize_ratio
 
     def train(self, training_set, batch_size, epoch_count, test_ratio=0.1):
         paths = []
@@ -327,13 +356,10 @@ class BlazeSsdDetector:
         train_paths, test_paths, = train_test_split(paths, test_size=test_ratio)
         training_images_path = os.path.join(root_path, "training_images.sav")
         test_images_path = os.path.join(root_path, "test_images.sav")
-        prior_boxes_path = os.path.join(root_path, "prior_boxes.sav")
         with open(training_images_path, "wb") as f:
             pickle.dump(train_paths, f)
         with open(test_images_path, "wb") as f:
             pickle.dump(test_paths, f)
-        with open(prior_boxes_path, "wb") as f:
-            pickle.dump(self.priorBoxes, f)
         # Save training - test set for later evaluation.
         train_iterator = \
             tf.data.Dataset.from_tensor_slices(train_paths).shuffle(buffer_size=100).batch(batch_size=batch_size)
@@ -341,7 +367,6 @@ class BlazeSsdDetector:
         #     shuffle(buffer_size=100).batch(batch_size=batch_size)
 
         with tf.device("GPU"):
-            align_bb_data = AlignBBData()
             m_box_loss = MultiboxLoss()
             for epoch_id in range(epoch_count):
                 self.lossTracker.reset_states()
@@ -353,17 +378,16 @@ class BlazeSsdDetector:
                     for file_path_tf in batch_paths:
                         file_path = file_path_tf.numpy().decode("utf-8")
                         bb_list = training_set[file_path]
-                        image, image_bb_list = self.decode_and_augment_images(file_path=file_path,
-                                                                              bb_list=bb_list,
-                                                                              augment=True)
+                        image, image_bb_list, _ = self.decode_and_augment_images(file_path=file_path,
+                                                                                 bb_list=bb_list,
+                                                                                 augment=True)
                         batch_images.append(image)
                         batch_bb_list.append(image_bb_list)
                     t1 = time.time()
                     with tf.GradientTape() as tape:
                         X = tf.stack(batch_images, axis=0)
-                        conf_outputs, reg_outputs = self.detectorModel(inputs=X, training=True)
                         confidences_reshaped, regression_reshaped, prior_boxes_reshaped = \
-                            align_bb_data((conf_outputs, reg_outputs, self.priorBoxTensors))
+                            self.detectorModel(inputs=X, training=True)
                         total_loss = m_box_loss((confidences_reshaped, regression_reshaped,
                                                  prior_boxes_reshaped, batch_bb_list))
                     grads = tape.gradient(total_loss, self.detectorModel.trainable_variables)
@@ -384,7 +408,6 @@ class BlazeSsdDetector:
                     iou_threshold=0.5):
         with tf.device("GPU"):
             test_iterator = tf.data.Dataset.from_tensor_slices(image_paths).batch(batch_size=batch_size)
-            align_bb_data = AlignBBData()
             get_predicted_boxes = GetPredictedBoxes()
             Utils.create_directory(path=visual_results_path)
             Utils.create_directory(path=txt_results_path)
@@ -396,21 +419,22 @@ class BlazeSsdDetector:
             for iter_id, batch_paths in enumerate(test_iterator):
                 batch_images = []
                 batch_bb_list = []
+                resize_ratios = []
                 # Prepare augmented, resized and padded images and the corresponding bounding boxes
                 t0 = time.time()
                 for file_path_tf in batch_paths:
                     file_path = file_path_tf.numpy().decode("utf-8")
                     bb_list = training_set[file_path]
-                    image, image_bb_list = self.decode_and_augment_images(file_path=file_path,
-                                                                          bb_list=bb_list,
-                                                                          augment=False)
+                    image, image_bb_list, resize_ratio = self.decode_and_augment_images(file_path=file_path,
+                                                                                        bb_list=bb_list,
+                                                                                        augment=False)
                     batch_images.append(image)
                     batch_bb_list.append(image_bb_list)
+                    resize_ratios.append(resize_ratio)
                 t1 = time.time()
                 X = tf.stack(batch_images, axis=0)
-                conf_outputs, reg_outputs = self.detectorModel(inputs=X, training=False)
                 confidences_reshaped, regression_reshaped, prior_boxes_reshaped = \
-                    align_bb_data((conf_outputs, reg_outputs, self.priorBoxTensors))
+                    self.detectorModel(inputs=X, training=False)
                 # Build predicted box locations
                 predicted_boxes = get_predicted_boxes((regression_reshaped, prior_boxes_reshaped))
                 t1 = time.time()
@@ -434,151 +458,38 @@ class BlazeSsdDetector:
                     selected_scores = tf.gather(conf, selected_indices)
                     selected_scores_np = selected_scores.numpy()
                     img_result = image.copy()
+                    resize_ratio = resize_ratios[image_id]
+                    gt_bb_list = training_set[img_path]
                     for box in box_locations_np:
-                        h = img_result.shape[0]
-                        w = img_result.shape[1]
-                        left = int(box[0] * w)
-                        top = int(box[1] * h)
-                        right = int(box[2] * w)
-                        bottom = int(box[3] * h)
+                        left = int((box[0] * self.inputShape[1]) / resize_ratio)
+                        top = int((box[1] * self.inputShape[0]) / resize_ratio)
+                        right = int((box[2] * self.inputShape[1]) / resize_ratio)
+                        bottom = int((box[3] * self.inputShape[0]) / resize_ratio)
                         cv2.rectangle(img_result, (left, top), (right, bottom), color=(0, 255, 0))
                     image_file_name = os.path.split(batch_paths[image_id].numpy().decode("utf-8"))[1]
                     image_file_path = os.path.join(visual_results_path, image_file_name)
                     cv2.imwrite(filename=image_file_path, img=img_result)
-
-            #     for imaged_id in range(img_paths.shape[0]):
-            #         img_path = img_paths[imaged_id]
-            #         img_bbs = list_of_bb_lists[imaged_id]
-            #         image = image_list[imaged_id]
-            #         conf = confidences_reshaped[imaged_id]
-            #         conf = conf[:, 0]
-            #         conf = tf.sigmoid(conf)
-            #         box_locations = predicted_boxes[imaged_id]
-            #         box_locations_yx = \
-            #             tf.stack([box_locations[:, 1], box_locations[:, 0], box_locations[:, 3], box_locations[:, 2]],
-            #                      axis=-1)
-            #         selected_indices = tf.image.non_max_suppression(box_locations_yx, conf, max_output_size=10,
-            #                                                         iou_threshold=iou_threshold,
-            #                                                         score_threshold=positive_threshold)
-            #         box_predictions = tf.gather(box_locations, selected_indices)
-            #         box_locations_np = box_predictions.numpy()
-            #         selected_scores = tf.gather(conf, selected_indices)
-            #         selected_scores_np = selected_scores.numpy()
-            #         img_result = image.copy()
-            #         for box in box_locations_np:
-            #             box_unnormalized = edge_size * box
-            #             cv2.rectangle(img_result, (int(box_unnormalized[0]), int(box_unnormalized[1])),
-            #                           (int(box_unnormalized[2]), int(box_unnormalized[3])),
-            #                           color=(0, 255, 0))
-            #         image_file_name = os.path.split(img_path.numpy().decode("utf-8"))[1]
-            #         image_file_path = os.path.join(visual_results_path, image_file_name)
-            #         cv2.imwrite(filename=image_file_path, img=img_result)
-            #         # Text outputs
-            #         ground_truth_file_path = os.path.join(detection_ground_truths_path, image_file_name[:-4] + ".txt")
-            #         predicton_file_path = os.path.join(detection_predictions_path, image_file_name[:-4] + ".txt")
-            #         # Ground truth
-            #         with open(ground_truth_file_path, 'a') as f:
-            #             for bb in img_bbs:
-            #                 f.write("{0} {1} {2} {3} {4}\n".format(
-            #                     "cat",
-            #                     int(edge_size * bb[0]),
-            #                     int(edge_size * bb[1]),
-            #                     int(edge_size * bb[2]),
-            #                     int(edge_size * bb[3])))
-            #         # Predictions
-            #         with open(predicton_file_path, 'a') as f:
-            #             for idx in range(box_locations_np.shape[0]):
-            #                 f.write("{0} {1} {2} {3} {4} {5}\n".format(
-            #                     "cat",
-            #                     selected_scores_np[idx],
-            #                     int(edge_size * box_locations_np[idx, 0]),
-            #                     int(edge_size * box_locations_np[idx, 1]),
-            #                     int(edge_size * box_locations_np[idx, 2]),
-            #                     int(edge_size * box_locations_np[idx, 3])))
-            # mean_detection_time = np.mean(np.array(detection_times))
-            # print("Mean detection time:{0}".format(mean_detection_time))
-
-        #     edge_size = self.inputShape[0]
-        #     test_set = tf.data.Dataset.from_tensor_slices((list_of_test_image_paths, list_of_test_bbs)).batch(
-        #         batch_size=batch_size)
-        #     align_bb_data = AlignBBData()
-        #     get_predicted_boxes = GetPredictedBoxes()
-        #     Utils.create_directory(path=visual_results_path)
-        #     Utils.create_directory(path=txt_results_path)
-        #     detection_ground_truths_path = os.path.join(txt_results_path, "ground_truth")
-        #     detection_predictions_path = os.path.join(txt_results_path, "predictions")
-        #     Utils.create_directory(path=detection_ground_truths_path)
-        #     Utils.create_directory(path=detection_predictions_path)
-        #     detection_times = []
-        #     for img_paths, bb_list in test_set:
-        #         image_list = []
-        #         list_of_bb_lists = []
-        #         for p, bbs in zip(img_paths, bb_list):
-        #             normalized_image, normalized_bb_list = self.normalize_image(image_path=p, bb_list=bbs,
-        #                                                                         edge_size=edge_size)
-        #             image_list.append(normalized_image)
-        #             list_of_bb_lists.append(normalized_bb_list)
-        #         X = tf.stack(image_list, axis=0)
-        #         t0 = time.time()
-        #         conf_outputs, reg_outputs = self.detectorModel(inputs=X, training=False)
-        #         confidences_reshaped, regression_reshaped, prior_boxes_reshaped = \
-        #             align_bb_data((conf_outputs, reg_outputs, self.priorBoxTensors))
-        #         # Build predicted box locations
-        #         predicted_boxes = get_predicted_boxes((regression_reshaped, prior_boxes_reshaped))
-        #         t1 = time.time()
-        #         print("t1 - t0:{0}".format(t1 - t0))
-        #         detection_times.append(t1 - t0)
-        #         for imaged_id in range(img_paths.shape[0]):
-        #             img_path = img_paths[imaged_id]
-        #             img_bbs = list_of_bb_lists[imaged_id]
-        #             image = image_list[imaged_id]
-        #             conf = confidences_reshaped[imaged_id]
-        #             conf = conf[:, 0]
-        #             conf = tf.sigmoid(conf)
-        #             box_locations = predicted_boxes[imaged_id]
-        #             box_locations_yx = \
-        #                 tf.stack([box_locations[:, 1], box_locations[:, 0], box_locations[:, 3], box_locations[:, 2]],
-        #                          axis=-1)
-        #             selected_indices = tf.image.non_max_suppression(box_locations_yx, conf, max_output_size=10,
-        #                                                             iou_threshold=iou_threshold,
-        #                                                             score_threshold=positive_threshold)
-        #             box_predictions = tf.gather(box_locations, selected_indices)
-        #             box_locations_np = box_predictions.numpy()
-        #             selected_scores = tf.gather(conf, selected_indices)
-        #             selected_scores_np = selected_scores.numpy()
-        #             img_result = image.copy()
-        #             for box in box_locations_np:
-        #                 box_unnormalized = edge_size * box
-        #                 cv2.rectangle(img_result, (int(box_unnormalized[0]), int(box_unnormalized[1])),
-        #                               (int(box_unnormalized[2]), int(box_unnormalized[3])),
-        #                               color=(0, 255, 0))
-        #             image_file_name = os.path.split(img_path.numpy().decode("utf-8"))[1]
-        #             image_file_path = os.path.join(visual_results_path, image_file_name)
-        #             cv2.imwrite(filename=image_file_path, img=img_result)
-        #             # Text outputs
-        #             ground_truth_file_path = os.path.join(detection_ground_truths_path, image_file_name[:-4] + ".txt")
-        #             predicton_file_path = os.path.join(detection_predictions_path, image_file_name[:-4] + ".txt")
-        #             # Ground truth
-        #             with open(ground_truth_file_path, 'a') as f:
-        #                 for bb in img_bbs:
-        #                     f.write("{0} {1} {2} {3} {4}\n".format(
-        #                         "cat",
-        #                         int(edge_size * bb[0]),
-        #                         int(edge_size * bb[1]),
-        #                         int(edge_size * bb[2]),
-        #                         int(edge_size * bb[3])))
-        #             # Predictions
-        #             with open(predicton_file_path, 'a') as f:
-        #                 for idx in range(box_locations_np.shape[0]):
-        #                     f.write("{0} {1} {2} {3} {4} {5}\n".format(
-        #                         "cat",
-        #                         selected_scores_np[idx],
-        #                         int(edge_size * box_locations_np[idx, 0]),
-        #                         int(edge_size * box_locations_np[idx, 1]),
-        #                         int(edge_size * box_locations_np[idx, 2]),
-        #                         int(edge_size * box_locations_np[idx, 3])))
-        #     mean_detection_time = np.mean(np.array(detection_times))
-        #     print("Mean detection time:{0}".format(mean_detection_time))
+                    # Text outputs
+                    ground_truth_file_path = os.path.join(detection_ground_truths_path, image_file_name[:-4] + ".txt")
+                    predicton_file_path = os.path.join(detection_predictions_path, image_file_name[:-4] + ".txt")
+                    with open(ground_truth_file_path, 'a') as f:
+                        for bb in gt_bb_list:
+                            f.write("{0} {1} {2} {3} {4}\n".format(
+                                "barcode",
+                                int(image.shape[1] * bb[0]),
+                                int(image.shape[0] * bb[1]),
+                                int(image.shape[1] * bb[2]),
+                                int(image.shape[0] * bb[3])))
+                    # Predictions
+                    with open(predicton_file_path, 'a') as f:
+                        for idx in range(box_locations_np.shape[0]):
+                            f.write("{0} {1} {2} {3} {4} {5}\n".format(
+                                "barcode",
+                                selected_scores_np[idx],
+                                int((box[0] * self.inputShape[1]) / resize_ratio),
+                                int((box[1] * self.inputShape[0]) / resize_ratio),
+                                int((box[2] * self.inputShape[1]) / resize_ratio),
+                                int((box[3] * self.inputShape[0]) / resize_ratio)))
 
 
 if __name__ == "__main__":

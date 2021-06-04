@@ -5,13 +5,21 @@ from utils import Utils
 
 
 class AlignBBData(tf.keras.layers.Layer):
-    def __init__(self, **kwargs):
+    def __init__(self, prior_box_tensors, **kwargs):
         super().__init__(**kwargs)
+        for prior_id, prior_tensor in enumerate(prior_box_tensors):
+            self.add_weight("prior_{0}".format(prior_id), shape=prior_tensor.shape,
+                            initializer=tf.keras.initializers.Constant(value=0),
+                            dtype=prior_tensor.dtype, trainable=False)
+            self.weights[-1].assign(prior_tensor)
+        assert len(self.weights) == len(prior_box_tensors)
+        assert all(["prior_{0}".format(prior_id) in self.weights[prior_id].name
+                    for prior_id in range(len(prior_box_tensors))])
 
     def call(self, inputs, training=None):
         confidence_outputs = inputs[0]
         regression_outputs = inputs[1]
-        prior_boxes = inputs[2]
+        prior_boxes = self.weights
         # assert confidence_outputs.shape[0] == regression_outputs.shape[0]
         # batch_size = confidence_outputs[0].shape[0]
         batch_size = tf.shape(confidence_outputs[0])[0]
