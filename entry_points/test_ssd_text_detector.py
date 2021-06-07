@@ -14,8 +14,8 @@ anchor_box_counts = (2, 6)
 cluster_count = sum(anchor_box_counts)
 batch_size = 64
 epoch_count = 1000
-model_name = "barcode_detector"
-model_epoch = "model_epoch200"
+model_name = "barcode_detector_2"
+model_epoch = "model_epoch150"
 
 
 def test_blaze_ssd_detector():
@@ -37,20 +37,15 @@ def test_blaze_ssd_detector():
         train_paths = pickle.load(f)
     with open(test_images_path, "rb") as f:
         test_paths = pickle.load(f)
-    with open(prior_boxes_path, "rb") as f:
-        prior_boxes = pickle.load(f)
 
     barcode_dataset = BarcodeDataset(dataset_path=barcode_folder_path)
-    barcode_dataset.preprocess_dataset(
-        barcodes_with_text_detection_path=barcodes_with_text_detection_path, cluster_count=cluster_count)
+    barcode_dataset.calculate_text_bounding_boxes(barcodes_with_text_detection_path=barcodes_with_text_detection_path)
 
     blaze_ssd_detector = BlazeSsdDetector(
         model_name=model_name,
         model_path=model_path,
-        input_shape=input_dims,
-        prior_boxes=prior_boxes
+        input_shape=input_dims
     )
-    blaze_ssd_detector.build_detector()
     blaze_ssd_detector.load_model(path=os.path.join(model_path, model_name, model_epoch))
     visual_results_path = os.path.join(root_path, "visual_results")
     txt_results_path = os.path.join(root_path, "txt_results")

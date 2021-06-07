@@ -26,7 +26,7 @@ def train_blaze_ssd_detector():
     model_path = os.path.join(file_path, "..", "saved_models")
 
     barcode_dataset = BarcodeDataset(dataset_path=barcode_folder_path)
-    barcode_dataset.preprocess_dataset(barcodes_with_text_detection_path=barcodes_with_text_detection_path)
+    barcode_dataset.calculate_text_bounding_boxes(barcodes_with_text_detection_path=barcodes_with_text_detection_path)
 
     blaze_ssd_detector = BlazeSsdDetector(
         model_name=model_name,

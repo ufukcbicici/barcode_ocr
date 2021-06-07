@@ -13,6 +13,6 @@ from text_detection.opencv_pretrained_east_detector import OpencvEastDetector
 from utils import Utils
 
 if __name__ == '__main__':
-    train_blaze_ssd_detector()
+    # train_blaze_ssd_detector()
     # test_blaze_ssd_detector()
-    # train_conv_autoencoder()
+    train_conv_autoencoder()

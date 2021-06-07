@@ -472,17 +472,17 @@ class BlazeSsdDetector:
                     cv2.imwrite(filename=image_file_path, img=img_result)
                     # Text outputs
                     ground_truth_file_path = os.path.join(detection_ground_truths_path, image_file_name[:-4] + ".txt")
-                    predicton_file_path = os.path.join(detection_predictions_path, image_file_name[:-4] + ".txt")
+                    prediction_file_path = os.path.join(detection_predictions_path, image_file_name[:-4] + ".txt")
                     with open(ground_truth_file_path, 'a') as f:
                         for bb in gt_bb_list:
                             f.write("{0} {1} {2} {3} {4}\n".format(
                                 "barcode",
-                                int(image.shape[1] * bb[0]),
-                                int(image.shape[0] * bb[1]),
-                                int(image.shape[1] * bb[2]),
-                                int(image.shape[0] * bb[3])))
+                                int(bb[0]),
+                                int(bb[1]),
+                                int(bb[2]),
+                                int(bb[3])))
                     # Predictions
-                    with open(predicton_file_path, 'a') as f:
+                    with open(prediction_file_path, 'a') as f:
                         for idx in range(box_locations_np.shape[0]):
                             f.write("{0} {1} {2} {3} {4} {5}\n".format(
                                 "barcode",

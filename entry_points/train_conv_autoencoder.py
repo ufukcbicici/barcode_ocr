@@ -12,12 +12,13 @@ patch_width = 16
 patch_height = 8
 input_dims = (patch_height, patch_width, 3)
 batch_size = 64
-patch_per_image = 4
-epoch_count = 10000
+patch_per_image = 16
+epoch_count = 1000
 model_name = "patch_autoencoder"
-detector_model_name = "barcode_detector"
+detector_model_name = "barcode_detector_2"
 encoder_layers = [(3, 16), (3, 32)]
 decoder_layers = [(3, 16), (3, 32)]
+do_calculate_mask_obb = False
 
 
 def train_conv_autoencoder():
@@ -36,10 +37,13 @@ def train_conv_autoencoder():
     prior_boxes_path = os.path.join(barcode_model_path, "prior_boxes.sav")
 
     barcode_dataset = BarcodeDataset(dataset_path=barcode_folder_path)
-    barcode_dataset.preprocess_dataset(
-        barcodes_with_text_detection_path=barcodes_with_text_detection_path, cluster_count=cluster_count)
+    if do_calculate_mask_obb:
+        barcode_dataset.calculate_mask_oriented_bounding_boxes(barcodes_with_text_detection_path)
 
-
+    # barcode_dataset.calculate_text_bounding_boxes(
+    #     barcodes_with_text_detection_path=barcodes_with_text_detection_path, cluster_count=cluster_count)
+    #
+    #
     with open(training_images_path, "rb") as f:
         train_paths = pickle.load(f)
     with open(test_images_path, "rb") as f:
@@ -51,19 +55,8 @@ def train_conv_autoencoder():
                               latent_dim=32,
                               layers_encoder=encoder_layers,
                               layers_decoder=decoder_layers)
-    conv_autoencoder.train(bounding_box_dict=barcode_dataset.boundingBoxDict,
-                           train_paths=train_paths,
+    conv_autoencoder.train(train_paths=train_paths,
                            test_paths=test_paths,
                            batch_size=batch_size,
                            patch_per_image=patch_per_image,
                            epoch_count=epoch_count)
-
-    # blaze_ssd_detector = BlazeSsdDetector(
-    #     model_name=model_name,
-    #     model_path=model_path,
-    #     input_shape=input_dims,
-    #     prior_boxes=barcode_dataset.anchorBoxes
-    # )
-    # blaze_ssd_detector.build_detector()
-    # blaze_ssd_detector.train(batch_size=batch_size, epoch_count=epoch_count,
-    #                          training_set=barcode_dataset.boundingBoxDict)

@@ -1,9 +1,13 @@
 import numpy as np
 import cv2
 import tensorflow as tf
+import os
+import pickle
 from scipy.stats import norm
 from sklearn import metrics
 from sklearn.metrics import classification_report
+
+from utils import Utils
 
 
 class ConvAE:
@@ -41,14 +45,14 @@ class ConvAE:
         self.mseTracker = tf.keras.metrics.Mean(name="mse_tracker")
         self.imageDict = {}
         self.maskDict = {}
+        self.maskObbDict = {}
 
     def get_mse(self, x):
-        x = tf.expand_dims(tf.cast(x, tf.float32), axis=-1)
         x_hat = self.model(x)
         delta_x = x_hat - x
         squared_delta_x = tf.square(delta_x)
-        mse_vector = tf.reduce_mean(squared_delta_x, axis=(1, 2))
-        return mse_vector
+        mse = tf.reduce_mean(squared_delta_x)
+        return mse
 
     def train_step(self, x):
         x = tf.expand_dims(x, axis=-1)
@@ -68,134 +72,90 @@ class ConvAE:
     def load_model(self, path):
         self.model = tf.keras.models.load_model(path)
 
-    def sample_patches_from_image(self, img_path, sample_per_image):
+    def crop_patch(self, image, sample_coords, verbose=False):
+        destination_patch = np.zeros(shape=self.originalDim, dtype=image.dtype)
+        source_left = int(max(int(sample_coords[0]) - self.originalDim[1] / 2, 0))
+        source_top = int(max(int(sample_coords[1]) - self.originalDim[0] / 2, 0))
+        source_right = int(min(int(sample_coords[0]) + self.originalDim[1] / 2, image.shape[1]))
+        source_bottom = int(min(int(sample_coords[1]) + self.originalDim[0] / 2, image.shape[0]))
+        source_patch = image[source_top:source_bottom, source_left:source_right, :]
+        destination_left = int(0.5 * (destination_patch.shape[1] - source_patch.shape[1]))
+        destination_top = int(0.5 * (destination_patch.shape[0] - source_patch.shape[0]))
+        destination_patch[destination_top:destination_top + source_patch.shape[0],
+        destination_left:destination_left + source_patch.shape[1]] = source_patch
+        if verbose:
+            image_clone = image.copy()
+            cv2.rectangle(image_clone, (source_left, source_top), (source_right, source_bottom), color=(0, 255, 0))
+            cv2.imshow("source", image_clone)
+            cv2.imshow("destination_patch", destination_patch)
+            cv2.waitKey(0)
+        return destination_patch
+
+    def sample_patches_from_image(self, img_path, sample_per_image, verbose=False):
         file_path = img_path.numpy().decode("utf-8")
+        root_path = os.path.split(file_path)[0]
+        file_name = os.path.split(file_path)[1][:-4]
+        # Read images, masks and oriented bounding boxes
         if file_path not in self.imageDict:
             assert file_path not in self.maskDict
+            assert file_path not in self.maskObbDict
             image = cv2.imread(file_path)
             mask_image = cv2.imread(file_path[:-4] + "_mask.png")
+            pickle_path = os.path.join(root_path, "{0}_mask_obb_coordinates.dat".format(file_name))
+            with open(pickle_path, "rb") as f:
+                obb_coords = pickle.load(f)
             self.imageDict[file_path] = image
             self.maskDict[file_path] = mask_image
+            self.maskObbDict[file_path] = obb_coords
         else:
             assert file_path in self.maskDict
+            assert file_path in self.maskObbDict
             image = self.imageDict[file_path]
             mask_image = self.maskDict[file_path]
-        # Get non zero positions
-        non_zero_indices = np.nonzero(mask_image)
-        print("X")
+            obb_coords = self.maskObbDict[file_path]
+        if verbose:
+            Utils.show_text_detections(image=image, detections=[obb_coords], window_name="image")
+            Utils.show_text_detections(image=mask_image, detections=[obb_coords], window_name="mask_image")
+            cv2.waitKey(0)
+        # Sample patches from the image, in the pixels of the oriented bounding box
+        dx = obb_coords[1] - obb_coords[0]
+        dy = obb_coords[3] - obb_coords[0]
+        patches = []
+        for patch_id in range(sample_per_image):
+            sample_dx = np.random.uniform(low=0.0, high=1.0) * dx
+            sample_dy = np.random.uniform(low=0.0, high=1.0) * dy
+            sample_coords = obb_coords[0] + sample_dx + sample_dy
+            destination_patch = self.crop_patch(image=image, sample_coords=sample_coords, verbose=verbose)
+            patches.append(destination_patch)
+        return patches
 
-    def train(self, bounding_box_dict, train_paths, test_paths, batch_size, patch_per_image, epoch_count):
+    def train(self, train_paths, test_paths, batch_size, patch_per_image, epoch_count):
         train_iterator = \
             tf.data.Dataset.from_tensor_slices(train_paths).shuffle(buffer_size=100).batch(
-                batch_size=batch_size).map(lambda x: self.sample_patches_from_image(x, patch_per_image))
+                batch_size=batch_size)
         self.imageDict = {}
         self.maskDict = {}
+        self.maskObbDict = {}
+
+        root_path = os.path.join(self.modelPath, self.modelName)
+        Utils.create_directory(path=root_path)
 
         with tf.device("GPU"):
-            for iteration_id, batch_paths in range(train_iterator):
-                print("X")
-
-
-# if __name__ == "__main__":
-#
-#     # *************************** DATA 1 ***************************
-#     # epoch_count = 100
-#     # # data_dim = 50
-#     # hidden_dim = 16
-#     # batch_size = 128
-#     # encoder_layers = [(5, 8), (5, 16)]
-#     # decoder_layers = [(5, 16), (5, 8)]
-#     # np.random.seed(42)
-#     # data_generator = Data1Reader(batch_size=batch_size, path='../anomaly-data-1')
-#     # conv_ae = ConvAE(name="conv_ae_data1",
-#     #                  original_dim=data_generator.trainX.shape[1],
-#     #                  latent_dim=hidden_dim,
-#     #                  layers_encoder=encoder_layers,
-#     #                  layers_decoder=decoder_layers)
-#     #
-#     # # for epoch_id in range(epoch_count):
-#     # #     for batch_X, batch_y in data_generator.trainSet:
-#     # #         print("Epoch:{0}".format(epoch_id))
-#     # #         conv_ae.train_step(x=tf.cast(batch_X, tf.float32))
-#     # # conv_ae.save_model()
-#     # conv_ae.load_model()
-#     #
-#     # mean_normal = None
-#     # std_normal = None
-#     # mean_anormal = None
-#     # std_anormal = None
-#     # for data_type, x_, y_ in (["train", data_generator.trainX, data_generator.trainy],
-#     #                           ["test", data_generator.testX, data_generator.testy]):
-#     #
-#     #     if data_type == "train":
-#     #         loss_vec = conv_ae.get_mse(x_)
-#     #         losses_normal = loss_vec[y_ == 0]
-#     #         losses_anormal = loss_vec[y_ == 1]
-#     #         mean_normal = np.mean(losses_normal)
-#     #         std_normal = np.std(losses_normal)
-#     #         mean_anormal = np.mean(losses_anormal)
-#     #         std_anormal = np.std(losses_anormal)
-#     #
-#     #     loss_vec = conv_ae.get_mse(x_)
-#     #     norm_p = norm.pdf(loss_vec, loc=mean_normal, scale=std_normal)
-#     #     anorm_p = norm.pdf(loss_vec, loc=mean_anormal, scale=std_anormal)
-#     #     predictions = np.stack([norm_p, anorm_p], axis=1)
-#     #     y_hat = np.argmax(predictions, axis=1)
-#     #     print("****************** Data:{0} ******************".format(data_type))
-#     #     print(classification_report(y_, y_hat))
-#     #     fpr, tpr, thresholds = metrics.roc_curve(y_, y_hat, pos_label=1)
-#     #     auc = metrics.auc(fpr, tpr)
-#     #     print("auc={0}".format(auc))
-#     # print("X")
-#     # *************************** DATA 1 ***************************
-#
-#     # *************************** DATA 2 ***************************
-#     epoch_count = 100
-#     # data_dim = 50
-#     hidden_dim = 4
-#     batch_size = 128
-#     encoder_layers = [(3, 8)]
-#     decoder_layers = [(3, 8)]
-#     np.random.seed(42)
-#     data_generator = Data2Reader(batch_size=batch_size, path='../anomaly-data-2.mat')
-#     conv_ae = ConvAE(name="conv_ae_data2",
-#                      original_dim=data_generator.trainX.shape[1],
-#                      latent_dim=hidden_dim,
-#                      layers_encoder=encoder_layers,
-#                      layers_decoder=decoder_layers)
-#
-#     for epoch_id in range(epoch_count):
-#         for batch_X, batch_y in data_generator.trainSet:
-#             print("Epoch:{0}".format(epoch_id))
-#             conv_ae.train_step(x=tf.cast(batch_X, tf.float32))
-#     conv_ae.save_model()
-#     # conv_ae.load_model()
-#
-#     mean_normal = None
-#     std_normal = None
-#     mean_anormal = None
-#     std_anormal = None
-#     for data_type, x_, y_ in (["train", data_generator.trainX, data_generator.trainy],
-#                               ["test", data_generator.testX, data_generator.testy]):
-#
-#         if data_type == "train":
-#             loss_vec = conv_ae.get_mse(x_)
-#             losses_normal = loss_vec[y_ == 0]
-#             losses_anormal = loss_vec[y_ == 1]
-#             mean_normal = np.mean(losses_normal)
-#             std_normal = np.std(losses_normal)
-#             mean_anormal = np.mean(losses_anormal)
-#             std_anormal = np.std(losses_anormal)
-#
-#         loss_vec = conv_ae.get_mse(x_)
-#         norm_p = norm.pdf(loss_vec, loc=mean_normal, scale=std_normal)
-#         anorm_p = norm.pdf(loss_vec, loc=mean_anormal, scale=std_anormal)
-#         predictions = np.stack([norm_p, anorm_p], axis=1)
-#         y_hat = np.argmax(predictions, axis=1)
-#         print("****************** Data:{0} ******************".format(data_type))
-#         print(classification_report(y_, y_hat))
-#         fpr, tpr, thresholds = metrics.roc_curve(y_, y_hat, pos_label=1)
-#         auc = metrics.auc(fpr, tpr)
-#         print("auc={0}".format(auc))
-#     print("X")
-#     # *************************** DATA 2 ***************************
+            for epoch_id in range(epoch_count):
+                self.mseTracker.reset_states()
+                for iteration_id, batch_paths in enumerate(train_iterator):
+                    patch_list = []
+                    for sample_id in range(batch_paths.shape[0]):
+                        image_patches = self.sample_patches_from_image(img_path=batch_paths[sample_id],
+                                                                       sample_per_image=patch_per_image, verbose=False)
+                        patch_list.extend(image_patches)
+                    X = np.stack(patch_list, axis=0)
+                    X = (1.0 / 255.0) * X
+                    with tf.GradientTape() as tape:
+                        mse = self.get_mse(x=X)
+                    grads = tape.gradient(mse, self.model.trainable_variables)
+                    self.optimizer.apply_gradients(zip(grads, self.model.trainable_variables))
+                    self.mseTracker.update_state(mse)
+                    print("Epoch:{0} Iteration:{1} Mse:{2}".format(epoch_id, iteration_id,
+                                                                   self.mseTracker.result().numpy()))
+                self.save_model(path=os.path.join(root_path, "model_epoch{0}".format(epoch_id)))
