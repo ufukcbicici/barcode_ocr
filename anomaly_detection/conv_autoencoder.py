@@ -6,6 +6,9 @@ import pickle
 from scipy.stats import norm
 from sklearn import metrics
 from sklearn.metrics import classification_report
+from shapely.geometry.polygon import Polygon
+from shapely.geometry import Point
+from tqdm import tqdm
 
 from utils import Utils
 
@@ -54,8 +57,14 @@ class ConvAE:
         mse = tf.reduce_mean(squared_delta_x)
         return mse
 
+    def get_mse_vector(self, x):
+        x_hat = self.model(x)
+        delta_x = x_hat - x
+        squared_delta_x = tf.square(delta_x)
+        mse = tf.reduce_mean(squared_delta_x, axis=(1, 2, 3))
+        return mse
+
     def train_step(self, x):
-        x = tf.expand_dims(x, axis=-1)
         with tf.GradientTape() as tape:
             x_hat = self.model(x)
             delta_x = x_hat - x
@@ -159,3 +168,54 @@ class ConvAE:
                     print("Epoch:{0} Iteration:{1} Mse:{2}".format(epoch_id, iteration_id,
                                                                    self.mseTracker.result().numpy()))
                 self.save_model(path=os.path.join(root_path, "model_epoch{0}".format(epoch_id)))
+                profiling_file = open(os.path.join(root_path, 'fit_ae.txt'), 'a')
+                profiling_file.write("Epoch:{0} Mse:{1}\n".format(epoch_id, self.mseTracker.result().numpy()))
+                profiling_file.close()
+
+    def train_anomaly_detector(self, train_paths, batch_size):
+        with tf.device("GPU"):
+            mse_list = []
+            patch_list = []
+            for file_path in tqdm(train_paths):
+                image = cv2.imread(file_path)
+                root_path = os.path.split(file_path)[0]
+                file_name = os.path.split(file_path)[1][:-4]
+                image_mse_list = []
+                pickle_path = os.path.join(root_path, "{0}_mask_obb_coordinates.dat".format(file_name))
+                with open(pickle_path, "rb") as f:
+                    obb_coords = pickle.load(f)
+                polygon = Polygon([obb_coords[0], obb_coords[1], obb_coords[2], obb_coords[3]])
+                for i in range(image.shape[0]):
+                    for j in range(image.shape[1]):
+                        point = Point(j, i)
+                        does_contain = polygon.contains(point)
+                        if does_contain:
+                            destination_patch = self.crop_patch(image=image,
+                                                                sample_coords=np.array([j, i]),
+                                                                verbose=False)
+                            destination_patch = (1.0 / 255.0) * destination_patch
+                            patch_list.append(destination_patch)
+                        if len(patch_list) == batch_size:
+                            X = np.stack(patch_list, axis=0)
+                            mse_vector = self.get_mse_vector(x=X).numpy()
+                            image_mse_list.append(mse_vector)
+                            patch_list = []
+                if len(patch_list) > 0:
+                    X = np.stack(patch_list, axis=0)
+                    mse_vector = self.get_mse_vector(x=X).numpy()
+                    image_mse_list.append(mse_vector)
+                    patch_list = []
+                image_mse_list = np.concatenate(image_mse_list)
+                mse_list.append(image_mse_list)
+        all_mses = np.concatenate(mse_list)
+        print("Mean MSE:{0}".format(np.mean(all_mses)))
+        mse_values_path = os.path.join(self.modelPath, self.modelName, 'mse_values.dat')
+        with open(mse_values_path, "wb") as f:
+            pickle.dump(all_mses, f)
+
+    def eval_anomaly_detector(self, test_paths, batch_size, percentile):
+        mse_values_path = os.path.join(self.modelPath, self.modelName, 'mse_values.dat')
+        with open(mse_values_path, "rb") as f:
+            all_mses = pickle.load(f)
+        mses_sorted = np.sort(all_mses)
+        print("X")

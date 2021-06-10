@@ -6,22 +6,22 @@ import pickle
 from anomaly_detection.conv_autoencoder import ConvAE
 from data_handling.barcode_dataset import BarcodeDataset
 from text_detection.blaze_ssd import BlazeSsdDetector
+from text_detection.unet_for_text_detection import Unet
 
-
-patch_width = 16
-patch_height = 8
-input_dims = (patch_height, patch_width, 3)
+image_width = 192
+image_height = 96
+input_dims = (image_height, image_width, 3)
 batch_size = 64
-patch_per_image = 16
-epoch_count = 1000
-model_name = "patch_autoencoder_2"
+epoch_count = 500
+model_name = "unet_detector"
 detector_model_name = "barcode_detector_2"
-encoder_layers = [(3, 16), (3, 32)]
-decoder_layers = [(3, 16), (3, 32)]
-do_calculate_mask_obb = False
+layer_width = 2
+layer_depth = 1
+class_weights = {0: 0.5, 1: 1.0}
+l2_lambda = 0.00001
 
 
-def train_conv_autoencoder():
+def train_unet_detector():
     gpus = tf.config.list_physical_devices('GPU')
     tf.config.experimental.set_memory_growth(gpus[0], True)
 
@@ -37,26 +37,15 @@ def train_conv_autoencoder():
     prior_boxes_path = os.path.join(barcode_model_path, "prior_boxes.sav")
 
     barcode_dataset = BarcodeDataset(dataset_path=barcode_folder_path)
-    if do_calculate_mask_obb:
-        barcode_dataset.calculate_mask_oriented_bounding_boxes(barcodes_with_text_detection_path)
 
-    # barcode_dataset.calculate_text_bounding_boxes(
-    #     barcodes_with_text_detection_path=barcodes_with_text_detection_path, cluster_count=cluster_count)
-    #
-    #
     with open(training_images_path, "rb") as f:
         train_paths = pickle.load(f)
     with open(test_images_path, "rb") as f:
         test_paths = pickle.load(f)
 
-    conv_autoencoder = ConvAE(model_name=model_name,
-                              model_path=os.path.join(file_path, "..", "saved_models"),
-                              original_dim=input_dims,
-                              latent_dim=32,
-                              layers_encoder=encoder_layers,
-                              layers_decoder=decoder_layers)
-    conv_autoencoder.train(train_paths=train_paths,
-                           test_paths=test_paths,
-                           batch_size=batch_size,
-                           patch_per_image=patch_per_image,
-                           epoch_count=epoch_count)
+    unet = Unet(model_name=model_name, model_path=os.path.join(file_path, "..", "saved_models"),
+                input_shape=input_dims, layer_width=layer_width, layer_depth=layer_depth, label_count=2,
+                dilation_kernel=5, class_weights=class_weights, l2_lambda=l2_lambda)
+    unet.build_network()
+
+    unet.train(train_paths=train_paths, test_paths=test_paths, batch_size=batch_size, epoch_count=epoch_count)

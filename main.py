@@ -6,13 +6,19 @@ import numpy as np
 
 from data_handling.barcode_dataset import BarcodeDataset
 from data_handling.text_annotator import TextAnnotator
+from entry_points.test_anomaly_detector import test_anomaly_detector
 from entry_points.test_ssd_text_detector import test_blaze_ssd_detector
+from entry_points.train_anomaly_detector import train_anomaly_detector
 from entry_points.train_ssd_text_detector import train_blaze_ssd_detector
 from entry_points.train_conv_autoencoder import train_conv_autoencoder
+from entry_points.train_unet_detector import train_unet_detector
 from text_detection.opencv_pretrained_east_detector import OpencvEastDetector
 from utils import Utils
 
 if __name__ == '__main__':
     # train_blaze_ssd_detector()
     # test_blaze_ssd_detector()
-    train_conv_autoencoder()
+    # train_conv_autoencoder()
+    # train_anomaly_detector()
+    # test_anomaly_detector()
+    train_unet_detector()
