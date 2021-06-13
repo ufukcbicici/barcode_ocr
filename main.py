@@ -10,6 +10,7 @@ from entry_points.test_anomaly_detector import test_anomaly_detector
 from entry_points.test_ssd_text_detector import test_blaze_ssd_detector
 from entry_points.test_unet_detector import test_unet_detector
 from entry_points.train_anomaly_detector import train_anomaly_detector
+from entry_points.train_gmm_bb_model import train_gmm_bb_likelihood
 from entry_points.train_ssd_text_detector import train_blaze_ssd_detector
 from entry_points.train_conv_autoencoder import train_conv_autoencoder
 from entry_points.train_unet_detector import train_unet_detector
@@ -24,4 +25,5 @@ if __name__ == '__main__':
     # train_anomaly_detector()
     # test_anomaly_detector()
     # train_unet_detector()
-    test_unet_detector()
+    # test_unet_detector()
+    train_gmm_bb_likelihood()

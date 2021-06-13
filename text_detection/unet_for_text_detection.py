@@ -57,6 +57,7 @@ class Unet:
         self.imageDict = {}
         self.maskDict = {}
         self.weightDict = {}
+        self.originalImagesDict = {}
         self.accuracyMetric = tf.keras.metrics.SparseCategoricalAccuracy()
         self.lossTracker = tf.keras.metrics.Mean()
         self.optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3)
@@ -122,6 +123,7 @@ class Unet:
         if image_path not in self.imageDict:
             assert image_path not in self.maskDict and image_path not in self.weightDict
             image = tf.io.decode_png(tf.io.read_file(file_path))
+            self.originalImagesDict[image_path] = image.numpy()
             mask_image = tf.io.decode_png(tf.io.read_file(mask_image_path))
             dilated_mask_image = tf.nn.dilation2d(
                 input=tf.expand_dims(mask_image, axis=0),
@@ -244,9 +246,9 @@ class Unet:
                 logits = self.model(images).numpy()
                 predicted_labels = np.argmax(logits, axis=-1)
                 gt_labels = masks[:, :, :, 0]
-                predicted_labels_vec = np.reshape(predicted_labels, newshape=(np.prod(predicted_labels.shape), ))
-                gt_labels_vec = np.reshape(gt_labels, newshape=(np.prod(gt_labels.shape), ))
-                weights_vec = np.reshape(weights[:, :, :, 0], newshape=(np.prod(weights[:, :, :, 0].shape), ))
+                predicted_labels_vec = np.reshape(predicted_labels, newshape=(np.prod(predicted_labels.shape),))
+                gt_labels_vec = np.reshape(gt_labels, newshape=(np.prod(gt_labels.shape),))
+                weights_vec = np.reshape(weights[:, :, :, 0], newshape=(np.prod(weights[:, :, :, 0].shape),))
                 predicted_labels_vec = predicted_labels_vec[weights_vec > 0]
                 gt_labels_vec = gt_labels_vec[weights_vec > 0]
                 y.append(gt_labels_vec)
@@ -257,12 +259,31 @@ class Unet:
         print(rep)
         return rep
 
-    def get_result_images(self, visuals_path, paths, batch_size):
+    def convert_back_to_original_size(self, original_image_shape, result_image):
+        curr_ratio = original_image_shape[0] / original_image_shape[1]
+        if curr_ratio <= self.inputShape[0] / self.inputShape[1]:
+            resize_ratio = self.inputShape[1] / original_image_shape[1]
+            new_size = [int(resize_ratio * original_image_shape[0]), self.inputShape[1]]
+        else:
+            resize_ratio = self.inputShape[0] / original_image_shape[0]
+            new_size = [self.inputShape[0], int(resize_ratio * original_image_shape[1])]
+        offset_x = self.inputShape[1] - new_size[1]
+        offset_y = self.inputShape[0] - new_size[0]
+        cropped_result = result_image[offset_y:result_image.shape[0], offset_x:result_image.shape[1]]
+        resized_cropped_result = tf.image.resize(np.expand_dims(cropped_result, axis=-1),
+                                                 size=(original_image_shape[0], original_image_shape[1]))
+        final_image = tf.cast(tf.greater(resized_cropped_result, 0), tf.uint8)
+        final_image = final_image.numpy()[:, :, 0]
+        return final_image
+
+    def get_result_images(self, visuals_path, paths, batch_size, verbose):
         test_iterator = \
             tf.data.Dataset.from_tensor_slices(paths).shuffle(buffer_size=100).batch(batch_size=batch_size)
-        Utils.create_directory(visuals_path)
+        if verbose:
+            Utils.create_directory(visuals_path)
+        masks_list = []
         with tf.device("GPU"):
-            for iter_id, batch_paths in enumerate(test_iterator):
+            for iter_id, batch_paths in tqdm(enumerate(test_iterator)):
                 images, masks, weights = self.get_batch_data(batch_paths=batch_paths, augment=False)
                 logits = self.model(images).numpy()
                 predicted_labels = np.argmax(logits, axis=-1)
@@ -270,8 +291,20 @@ class Unet:
                     path_str = image_path.numpy().decode("utf-8")
                     root_folder = os.path.split(path_str)[0]
                     file_name = os.path.split(path_str)[1]
-                    destination_path = os.path.join(visuals_path, file_name[:-4] + "_predicted_mask.png")
-                    cv2.imwrite(destination_path, 255 * predicted_labels[s_id])
+                    # Back to the original image
+                    original_sized_mask = self.convert_back_to_original_size(
+                        original_image_shape=self.originalImagesDict[path_str].shape,
+                        result_image=predicted_labels[s_id])
+                    assert original_sized_mask.shape[0] == self.originalImagesDict[path_str].shape[0] \
+                           and original_sized_mask.shape[1] == self.originalImagesDict[path_str].shape[1]
+                    if verbose:
+                        original_image_destination_path = os.path.join(visuals_path, file_name)
+                        mask_destination_path = os.path.join(visuals_path, file_name[:-4] + "_predicted_mask.png")
+                        cv2.imwrite(mask_destination_path, 255 * original_sized_mask)
+                        cv2.imwrite(original_image_destination_path,
+                                    cv2.cvtColor(self.originalImagesDict[path_str], cv2.COLOR_RGB2BGR))
+                    masks_list.append(original_sized_mask)
+        return masks_list
 
     def get_batch_data(self, batch_paths, augment):
         images = []

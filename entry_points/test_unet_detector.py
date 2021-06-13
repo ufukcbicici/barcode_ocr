@@ -43,4 +43,4 @@ def test_unet_detector():
                 dilation_kernel=5, class_weights=class_weights, l2_lambda=l2_lambda)
     unet.load_model(path=os.path.join(file_path, "..", "saved_models", model_name, model_epoch))
     unet.get_result_images(visuals_path=os.path.join(file_path, "..", "saved_models", model_name, "visual_results"),
-                           paths=test_paths, batch_size=batch_size)
+                           paths=test_paths, batch_size=batch_size, verbose=True)
