@@ -6,6 +6,7 @@ import os
 import shutil
 import pickle
 
+from sklearn.metrics import classification_report
 from sklearn_extra.cluster import KMedoids
 from tqdm import tqdm
 from sklearn.model_selection import train_test_split
@@ -119,70 +120,76 @@ class Unet:
         image_path = file_path.numpy().decode("utf-8")
         mask_image_path = image_path[:-4] + "_mask.png"
         if image_path not in self.imageDict:
-            assert image_path not in self.maskDict
+            assert image_path not in self.maskDict and image_path not in self.weightDict
             image = tf.io.decode_png(tf.io.read_file(file_path))
             mask_image = tf.io.decode_png(tf.io.read_file(mask_image_path))
-            self.imageDict[image_path] = image
-            self.maskDict[image_path] = mask_image
+            dilated_mask_image = tf.nn.dilation2d(
+                input=tf.expand_dims(mask_image, axis=0),
+                filters=tf.zeros(shape=[self.dilationKernel, self.dilationKernel, 1], dtype=tf.uint8),
+                strides=[1, 1, 1, 1],
+                padding="SAME",
+                data_format="NHWC",
+                dilations=[1, 1, 1, 1]
+            )
+            dilated_mask_image = dilated_mask_image[0]
+            curr_ratio = image.shape.as_list()[0] / image.shape.as_list()[1]
+            if curr_ratio <= self.inputShape[0] / self.inputShape[1]:
+                resize_ratio = self.inputShape[1] / image.shape.as_list()[1]
+                new_size = [int(resize_ratio * image.shape.as_list()[0]), self.inputShape[1]]
+                image_resized = tf.image.resize(image, size=new_size)
+                mask_resized = tf.image.resize(mask_image, size=new_size)
+                dilated_mask_image_resized = tf.image.resize(dilated_mask_image, size=new_size)
+            else:
+                resize_ratio = self.inputShape[0] / image.shape.as_list()[0]
+                new_size = [self.inputShape[0], int(resize_ratio * image.shape.as_list()[1])]
+                image_resized = tf.image.resize(image, size=new_size)
+                mask_resized = tf.image.resize(mask_image, size=new_size)
+                dilated_mask_image_resized = tf.image.resize(dilated_mask_image, size=new_size)
+
+            dilated_mask_image_resized = tf.cast(tf.greater(dilated_mask_image_resized, 0),
+                                                 dtype=tf.int32)
+            weight_mask = tf.zeros_like(input=dilated_mask_image_resized, dtype=image_resized.dtype)
+            for class_id, class_weight in self.classWeights.items():
+                class_weights_arr = tf.where(tf.equal(dilated_mask_image_resized, class_id),
+                                             class_weight * tf.ones_like(weight_mask), tf.zeros_like(weight_mask))
+                weight_mask += class_weights_arr
+
+            offset_x = self.inputShape[1] - image_resized.shape[1]
+            offset_y = self.inputShape[0] - image_resized.shape[0]
+            image_resized_padded = tf.image.pad_to_bounding_box(image_resized, offset_y, offset_x, self.inputShape[0],
+                                                                self.inputShape[1])
+            mask_resized_padded = tf.image.pad_to_bounding_box(mask_resized, offset_y, offset_x, self.inputShape[0],
+                                                               self.inputShape[1])
+            dilated_mask_image_resized_padded = tf.image.pad_to_bounding_box(dilated_mask_image_resized, offset_y,
+                                                                             offset_x,
+                                                                             self.inputShape[0],
+                                                                             self.inputShape[1])
+            weight_mask_padded = tf.image.pad_to_bounding_box(weight_mask, offset_y, offset_x,
+                                                              self.inputShape[0],
+                                                              self.inputShape[1])
+            self.imageDict[image_path] = image_resized_padded
+            self.maskDict[image_path] = dilated_mask_image_resized_padded
+            self.weightDict[image_path] = weight_mask_padded
         else:
-            assert file_path in self.maskDict
-            image = self.imageDict[image_path]
-            mask_image = self.maskDict[image_path]
+            assert image_path in self.maskDict and image_path in self.weightDict
+            image_resized_padded = self.imageDict[image_path]
+            dilated_mask_image_resized_padded = self.maskDict[image_path]
+            weight_mask_padded = self.weightDict[image_path]
 
         if augment:
-            image = tf.image.random_brightness(image, self.brightness_max_delta)
-            image = tf.image.random_contrast(image, lower=self.contrast_range[0], upper=self.contrast_range[1])
-        dilated_mask_image = tf.nn.dilation2d(
-            input=tf.expand_dims(mask_image, axis=0),
-            filters=tf.zeros(shape=[self.dilationKernel, self.dilationKernel, 1], dtype=tf.uint8),
-            strides=[1, 1, 1, 1],
-            padding="SAME",
-            data_format="NHWC",
-            dilations=[1, 1, 1, 1]
-        )
-        dilated_mask_image = dilated_mask_image[0]
-        curr_ratio = image.shape.as_list()[0] / image.shape.as_list()[1]
-        if curr_ratio <= self.inputShape[0] / self.inputShape[1]:
-            resize_ratio = self.inputShape[1] / image.shape.as_list()[1]
-            new_size = [int(resize_ratio * image.shape.as_list()[0]), self.inputShape[1]]
-            image_resized = tf.image.resize(image, size=new_size)
-            mask_resized = tf.image.resize(mask_image, size=new_size)
-            dilated_mask_image_resized = tf.image.resize(dilated_mask_image, size=new_size)
-        else:
-            resize_ratio = self.inputShape[0] / image.shape.as_list()[0]
-            new_size = [self.inputShape[0], int(resize_ratio * image.shape.as_list()[1])]
-            image_resized = tf.image.resize(image, size=new_size)
-            mask_resized = tf.image.resize(mask_image, size=new_size)
-            dilated_mask_image_resized = tf.image.resize(dilated_mask_image, size=new_size)
-
-        dilated_mask_image_resized = tf.cast(tf.greater(dilated_mask_image_resized, 0),
-                                             dtype=tf.int32)
-        weight_mask = tf.zeros_like(input=dilated_mask_image_resized, dtype=image_resized.dtype)
-        for class_id, class_weight in self.classWeights.items():
-            class_weights_arr = tf.where(tf.equal(dilated_mask_image_resized, class_id),
-                                         class_weight * tf.ones_like(weight_mask), tf.zeros_like(weight_mask))
-            weight_mask += class_weights_arr
-
-        offset_x = self.inputShape[1] - image_resized.shape[1]
-        offset_y = self.inputShape[0] - image_resized.shape[0]
-        image_resized_padded = tf.image.pad_to_bounding_box(image_resized, offset_y, offset_x, self.inputShape[0],
-                                                            self.inputShape[1])
-        mask_resized_padded = tf.image.pad_to_bounding_box(mask_resized, offset_y, offset_x, self.inputShape[0],
-                                                           self.inputShape[1])
-        dilated_mask_image_resized_padded = tf.image.pad_to_bounding_box(dilated_mask_image_resized, offset_y, offset_x,
-                                                                         self.inputShape[0],
-                                                                         self.inputShape[1])
-        weight_mask_padded = tf.image.pad_to_bounding_box(weight_mask, offset_y, offset_x,
-                                                          self.inputShape[0],
-                                                          self.inputShape[1])
+            image_resized_padded = tf.cast(image_resized_padded, dtype=tf.uint8)
+            image_resized_padded = tf.image.random_brightness(image_resized_padded, self.brightness_max_delta)
+            image_resized_padded = tf.image.random_contrast(image_resized_padded, lower=self.contrast_range[0],
+                                                            upper=self.contrast_range[1])
+            image_resized_padded = tf.cast(image_resized_padded, dtype=tf.float32)
 
         if verbose:
-            np_image_resized_rgb = image_resized.numpy().astype(np.uint8)
-            np_image_resized_bgr = cv2.cvtColor(np_image_resized_rgb, cv2.COLOR_RGB2BGR)
-            np_mask_resized = mask_resized.numpy().astype(np.uint8)
+            # np_image_resized_rgb = image_resized.numpy().astype(np.uint8)
+            # np_image_resized_bgr = cv2.cvtColor(np_image_resized_rgb, cv2.COLOR_RGB2BGR)
+            # np_mask_resized = mask_resized.numpy().astype(np.uint8)
             np_image_resized_padded_rgb = image_resized_padded.numpy().astype(np.uint8)
             np_image_resized_padded_bgr = cv2.cvtColor(np_image_resized_padded_rgb, cv2.COLOR_RGB2BGR)
-            np_mask_resized_padded = mask_resized_padded.numpy().astype(np.uint8)
+            # np_mask_resized_padded = mask_resized_padded.numpy().astype(np.uint8)
             np_dilated_mask_image_resized_padded = 255 * dilated_mask_image_resized_padded.numpy().astype(np.uint8)
             np_weight_mask_padded = weight_mask_padded.numpy()
             np_weight_mask_colored = np.zeros_like(np_image_resized_padded_bgr)
@@ -192,10 +199,10 @@ class Unet:
                                       np.array([0, 0, 0])).astype(dtype=np.uint8)
                 np_weight_mask_colored += color_mask
 
-            cv2.imshow("np_image_resized_bgr", np_image_resized_bgr)
-            cv2.imshow("np_mask_resized", np_mask_resized)
+            # cv2.imshow("np_image_resized_bgr", np_image_resized_bgr)
+            # cv2.imshow("np_mask_resized", np_mask_resized)
             cv2.imshow("np_image_resized_padded_bgr", np_image_resized_padded_bgr)
-            cv2.imshow("np_mask_resized_padded", np_mask_resized_padded)
+            # cv2.imshow("np_mask_resized_padded", np_mask_resized_padded)
             cv2.imshow("np_dilated_mask_image_resized_padded", np_dilated_mask_image_resized_padded)
             cv2.imshow("np_weight_mask_colored", np_weight_mask_colored)
             cv2.waitKey(0)
@@ -216,7 +223,7 @@ class Unet:
             if "kernel" in variable.name:
                 l2_losses.append(self.l2Lambda * tf.nn.l2_loss(variable))
         l2_loss = tf.add_n(l2_losses)
-        total_loss = ce_loss + l2_losses
+        total_loss = ce_loss + l2_loss
         return total_loss
 
     def save_model(self, path):
@@ -225,15 +232,80 @@ class Unet:
     def load_model(self, path):
         self.model = tf.keras.models.load_model(path)
 
-    def train(self, train_paths, test_paths, epoch_count, batch_size):
+    def eval(self, paths, batch_size):
+        test_iterator = \
+            tf.data.Dataset.from_tensor_slices(paths).shuffle(buffer_size=100).batch(batch_size=batch_size)
+        with tf.device("GPU"):
+            y = []
+            y_hat = []
+            self.lossTracker.result()
+            for iter_id, batch_paths in enumerate(test_iterator):
+                images, masks, weights = self.get_batch_data(batch_paths=batch_paths, augment=False)
+                logits = self.model(images).numpy()
+                predicted_labels = np.argmax(logits, axis=-1)
+                gt_labels = masks[:, :, :, 0]
+                predicted_labels_vec = np.reshape(predicted_labels, newshape=(np.prod(predicted_labels.shape), ))
+                gt_labels_vec = np.reshape(gt_labels, newshape=(np.prod(gt_labels.shape), ))
+                weights_vec = np.reshape(weights[:, :, :, 0], newshape=(np.prod(weights[:, :, :, 0].shape), ))
+                predicted_labels_vec = predicted_labels_vec[weights_vec > 0]
+                gt_labels_vec = gt_labels_vec[weights_vec > 0]
+                y.append(gt_labels_vec)
+                y_hat.append(predicted_labels_vec)
+            y = np.concatenate(y)
+            y_hat = np.concatenate(y_hat)
+        rep = classification_report(y, y_hat)
+        print(rep)
+        return rep
+
+    def get_result_images(self, visuals_path, paths, batch_size):
+        test_iterator = \
+            tf.data.Dataset.from_tensor_slices(paths).shuffle(buffer_size=100).batch(batch_size=batch_size)
+        Utils.create_directory(visuals_path)
+        with tf.device("GPU"):
+            for iter_id, batch_paths in enumerate(test_iterator):
+                images, masks, weights = self.get_batch_data(batch_paths=batch_paths, augment=False)
+                logits = self.model(images).numpy()
+                predicted_labels = np.argmax(logits, axis=-1)
+                for s_id, image_path in enumerate(batch_paths):
+                    path_str = image_path.numpy().decode("utf-8")
+                    root_folder = os.path.split(path_str)[0]
+                    file_name = os.path.split(path_str)[1]
+                    destination_path = os.path.join(visuals_path, file_name[:-4] + "_predicted_mask.png")
+                    cv2.imwrite(destination_path, 255 * predicted_labels[s_id])
+
+    def get_batch_data(self, batch_paths, augment):
+        images = []
+        masks = []
+        weights = []
+        for file_path_tf in batch_paths:
+            image_resized_padded, dilated_mask_image_resized_padded, weight_mask_padded = \
+                self.decode_and_augment_images(file_path=file_path_tf, augment=augment, verbose=False)
+            images.append(image_resized_padded)
+            masks.append(dilated_mask_image_resized_padded)
+            weights.append(weight_mask_padded)
+        images = np.stack(images, axis=0)
+        masks = np.stack(masks, axis=0)
+        weights = np.stack(weights, axis=0)
+        return images, masks, weights
+
+    def train(self, paths, epoch_count, batch_size, test_ratio=0.1):
+        # Apply train test split
+        root_path = os.path.join(self.modelPath, self.modelName)
+        Utils.create_directory(path=root_path)
+
+        train_paths, test_paths, = train_test_split(paths, test_size=test_ratio)
+        training_images_path = os.path.join(root_path, "training_images.sav")
+        test_images_path = os.path.join(root_path, "test_images.sav")
+        with open(training_images_path, "wb") as f:
+            pickle.dump(train_paths, f)
+        with open(test_images_path, "wb") as f:
+            pickle.dump(test_paths, f)
+
         train_iterator = \
             tf.data.Dataset.from_tensor_slices(train_paths).shuffle(buffer_size=100).batch(
                 batch_size=batch_size)
         self.imageDict = {}
         self.maskDict = {}
-
-        root_path = os.path.join(self.modelPath, self.modelName)
-        Utils.create_directory(path=root_path)
 
         with tf.device("GPU"):
             for epoch_id in range(epoch_count):
@@ -241,28 +313,25 @@ class Unet:
                 self.lossTracker.result()
                 for iter_id, batch_paths in enumerate(train_iterator):
                     t0 = time.time()
-                    images = []
-                    masks = []
-                    weights = []
-                    for file_path_tf in batch_paths:
-                        image_resized_padded, dilated_mask_image_resized_padded, weight_mask_padded = \
-                            self.decode_and_augment_images(file_path=file_path_tf, augment=True, verbose=False)
-                        images.append(image_resized_padded)
-                        masks.append(dilated_mask_image_resized_padded)
-                        weights.append(weight_mask_padded)
+                    images, masks, weights = self.get_batch_data(batch_paths=batch_paths, augment=True)
                     t1 = time.time()
-                    images = np.stack(images, axis=0)
-                    masks = np.stack(masks, axis=0)
-                    weights = np.stack(weights, axis=0)
                     with tf.GradientTape() as tape:
                         total_loss = self.calculate_loss(images=images, masks=masks, weights=weights)
                     grads = tape.gradient(total_loss, self.model.trainable_variables)
                     t2 = time.time()
                     self.optimizer.apply_gradients(zip(grads, self.model.trainable_variables))
                     self.lossTracker.update_state(total_loss)
-                    print("Epoch:{0} Iteration:{1} Mse:{2}".format(epoch_id, iter_id,
-                                                                   self.lossTracker.result().numpy()))
+                    print("Epoch:{0} Iteration:{1} Loss:{2} t1-t0:{3} t2-t1:{4}".format(
+                        epoch_id, iter_id,
+                        self.lossTracker.result().numpy(),
+                        t1 - t0, t2 - t1))
                 self.save_model(path=os.path.join(root_path, "model_epoch{0}".format(epoch_id)))
+                # training_classification_rep = self.eval(paths=train_paths, batch_size=batch_size)
+                test_classification_rep = self.eval(paths=test_paths, batch_size=batch_size)
                 profiling_file = open(os.path.join(root_path, 'fit_unet.txt'), 'a')
                 profiling_file.write("Epoch:{0} Loss:{1}\n".format(epoch_id, self.lossTracker.result().numpy()))
+                profiling_file.write("Training Stats\n")
+                # profiling_file.write("{0}\n".format(training_classification_rep))
+                profiling_file.write("Test Stats\n")
+                profiling_file.write("{0}\n".format(test_classification_rep))
                 profiling_file.close()

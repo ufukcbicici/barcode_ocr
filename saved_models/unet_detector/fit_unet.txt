@@ -1,0 +1,5640 @@
+Epoch:0 Loss:0.05316521227359772
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       0.99      0.99      0.99  11479271
+           1       0.97      0.98      0.97   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.98      0.98      0.98  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:1 Loss:0.032658837735652924
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.98      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:2 Loss:0.025258483365178108
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:3 Loss:0.021338755264878273
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.98      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:4 Loss:0.018866604194045067
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.98      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:5 Loss:0.017125403508543968
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:6 Loss:0.015827637165784836
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:7 Loss:0.014821017161011696
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:8 Loss:0.019358452409505844
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.99  11479271
+           1       0.93      0.98      0.95   2854489
+
+    accuracy                           0.98  14333760
+   macro avg       0.96      0.98      0.97  14333760
+weighted avg       0.98      0.98      0.98  14333760
+
+Epoch:9 Loss:0.019239766523241997
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99  11479271
+           1       0.95      0.99      0.97   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.97      0.99      0.98  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:10 Loss:0.01871294341981411
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99  11479271
+           1       0.96      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.98      0.99      0.98  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:11 Loss:0.01816997304558754
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.98      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:12 Loss:0.017663873732089996
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.98      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:13 Loss:0.017193816602230072
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.98      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:14 Loss:0.016765497624874115
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.98      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:15 Loss:0.016372257843613625
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.98      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:16 Loss:0.016008500009775162
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:17 Loss:0.01567045785486698
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:18 Loss:0.015356396324932575
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:19 Loss:0.01506851613521576
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:20 Loss:0.014795315451920033
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:21 Loss:0.014540421776473522
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:22 Loss:0.01429653912782669
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:23 Loss:0.014064479619264603
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:24 Loss:0.013841320760548115
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:25 Loss:0.013625760562717915
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:26 Loss:0.013421067036688328
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:27 Loss:0.013227269984781742
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:28 Loss:0.013038509525358677
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:29 Loss:0.012859214097261429
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:30 Loss:0.012692349031567574
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:31 Loss:0.012520581483840942
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:32 Loss:0.012388027273118496
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:33 Loss:0.012240942567586899
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:34 Loss:0.012093213386833668
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:35 Loss:0.011947187595069408
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:36 Loss:0.011801901273429394
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:37 Loss:0.011660344898700714
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:38 Loss:0.011523958295583725
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:39 Loss:0.011388823390007019
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:40 Loss:0.011260722763836384
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:41 Loss:0.011140353977680206
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:42 Loss:0.01101633720099926
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:43 Loss:0.010895534418523312
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:44 Loss:0.010779273696243763
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:45 Loss:0.010663135908544064
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:46 Loss:0.010549282655119896
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:47 Loss:0.010800073854625225
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:48 Loss:0.010744241997599602
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:49 Loss:0.010685592889785767
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:50 Loss:0.010615424253046513
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:51 Loss:0.010542215779423714
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:52 Loss:0.010466622188687325
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:53 Loss:0.010390186682343483
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:54 Loss:0.010313768871128559
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:55 Loss:0.010236900299787521
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:56 Loss:0.010160750709474087
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:57 Loss:0.010099968872964382
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:58 Loss:0.010030488483607769
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:59 Loss:0.009957660920917988
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:60 Loss:0.009885570034384727
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:61 Loss:0.009813399985432625
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:62 Loss:0.0097434613853693
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      1.00      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:63 Loss:0.00968366302549839
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:64 Loss:0.009615499526262283
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:65 Loss:0.009547950699925423
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:66 Loss:0.00948138814419508
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:67 Loss:0.009414986707270145
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:68 Loss:0.009350020438432693
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:69 Loss:0.0092882439494133
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:70 Loss:0.009226462803781033
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:71 Loss:0.00916417594999075
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:72 Loss:0.009105735458433628
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:73 Loss:0.009045889601111412
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:74 Loss:0.008989071473479271
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:75 Loss:0.008931511081755161
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:76 Loss:0.00887550413608551
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:77 Loss:0.008819946087896824
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:78 Loss:0.008766978979110718
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:79 Loss:0.008717486634850502
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:80 Loss:0.008665144443511963
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:81 Loss:0.008612867444753647
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:82 Loss:0.008565865457057953
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:83 Loss:0.00851631723344326
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:84 Loss:0.008467970415949821
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:85 Loss:0.008420315571129322
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:86 Loss:0.008385367691516876
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:87 Loss:0.008341827429831028
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:88 Loss:0.008296418003737926
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:89 Loss:0.008251091465353966
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:90 Loss:0.008207904174923897
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:91 Loss:0.008167716674506664
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      0.99  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.98      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:92 Loss:0.008136997930705547
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:93 Loss:0.008097685873508453
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:94 Loss:0.008057468570768833
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:95 Loss:0.008016753941774368
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:96 Loss:0.00797685794532299
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:97 Loss:0.007948175072669983
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:98 Loss:0.00791341532021761
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:99 Loss:0.007878588512539864
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:100 Loss:0.007841844111680984
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:101 Loss:0.007804895751178265
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:102 Loss:0.007768412120640278
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:103 Loss:0.007733370643109083
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:104 Loss:0.007698868867009878
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:105 Loss:0.007665362674742937
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:106 Loss:0.007636342663317919
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:107 Loss:0.007603278383612633
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:108 Loss:0.007569963578134775
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:109 Loss:0.007537116762250662
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:110 Loss:0.007504654116928577
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:111 Loss:0.007472396362572908
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:112 Loss:0.007445458322763443
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:113 Loss:0.007417371496558189
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:114 Loss:0.007387122139334679
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:115 Loss:0.007356579415500164
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:116 Loss:0.0073266541585326195
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:117 Loss:0.007296936120837927
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:118 Loss:0.007271821144968271
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:119 Loss:0.007243059109896421
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:120 Loss:0.007215478457510471
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:121 Loss:0.007187395356595516
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:122 Loss:0.007159373257309198
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:123 Loss:0.007131768856197596
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:124 Loss:0.007104416843503714
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:125 Loss:0.007078138645738363
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:126 Loss:0.007052020635455847
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:127 Loss:0.007025893311947584
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:128 Loss:0.006999945733696222
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:129 Loss:0.0069778552278876305
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:130 Loss:0.006953344214707613
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:131 Loss:0.006929193157702684
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:132 Loss:0.006904660724103451
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:133 Loss:0.00688052037730813
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:134 Loss:0.006857984699308872
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:135 Loss:0.006994578521698713
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:136 Loss:0.006995279807597399
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:137 Loss:0.006991076748818159
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:138 Loss:0.0069843861274421215
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:139 Loss:0.006976163946092129
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      0.99      0.99  14333760
+
+Epoch:140 Loss:0.0069668772630393505
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:141 Loss:0.006956513971090317
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:142 Loss:0.006945495028048754
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:143 Loss:0.006933468393981457
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:144 Loss:0.006920843385159969
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:145 Loss:0.006907550618052483
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:146 Loss:0.006893691141158342
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:147 Loss:0.006879225838929415
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:148 Loss:0.006864531897008419
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:149 Loss:0.00686300452798605
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:150 Loss:0.006854667328298092
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:151 Loss:0.006842745002359152
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:152 Loss:0.006829387042671442
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:153 Loss:0.006815201137214899
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:154 Loss:0.0068005952052772045
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:155 Loss:0.006785565055906773
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:156 Loss:0.006770207546651363
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:157 Loss:0.006754852831363678
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:158 Loss:0.006739339791238308
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:159 Loss:0.006723692175000906
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:160 Loss:0.006708233617246151
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:161 Loss:0.006692543160170317
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:162 Loss:0.006676708813756704
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:163 Loss:0.006661128718405962
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:164 Loss:0.006645891349762678
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:165 Loss:0.006629937328398228
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:166 Loss:0.0066146403551101685
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:167 Loss:0.006599440239369869
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:168 Loss:0.006583693437278271
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:169 Loss:0.006569274701178074
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:170 Loss:0.006553743965923786
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      0.99      0.99  14333760
+
+Epoch:171 Loss:0.0065396749414503574
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:172 Loss:0.006524064112454653
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:173 Loss:0.006509126164019108
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:174 Loss:0.006493961438536644
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:175 Loss:0.006478407885879278
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:176 Loss:0.006463490892201662
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:177 Loss:0.006448262836784124
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:178 Loss:0.006433355621993542
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:179 Loss:0.006418336648494005
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:180 Loss:0.006403366569429636
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:181 Loss:0.006390358321368694
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:182 Loss:0.006375696510076523
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:183 Loss:0.006360800936818123
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:184 Loss:0.006346127018332481
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:185 Loss:0.006331813056021929
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:186 Loss:0.006317358464002609
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:187 Loss:0.006303314585238695
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:188 Loss:0.006289375480264425
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:189 Loss:0.006275414023548365
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:190 Loss:0.006261512637138367
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:191 Loss:0.006247497163712978
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:192 Loss:0.006233954802155495
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:193 Loss:0.006220176350325346
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:194 Loss:0.006207316182553768
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:195 Loss:0.006194935645908117
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:196 Loss:0.006181677337735891
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:197 Loss:0.006168156396597624
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:198 Loss:0.006155002862215042
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:199 Loss:0.006141716614365578
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:200 Loss:0.006130344234406948
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:201 Loss:0.00611861189827323
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:202 Loss:0.006105846259742975
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:203 Loss:0.006093139294534922
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:204 Loss:0.006080355029553175
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:205 Loss:0.006067480426281691
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:206 Loss:0.006054852623492479
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:207 Loss:0.0060424525290727615
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:208 Loss:0.006030002608895302
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:209 Loss:0.006017940118908882
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:210 Loss:0.006006973795592785
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      0.99      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:211 Loss:0.0059949071146547794
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:212 Loss:0.005985679570585489
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:213 Loss:0.005974504165351391
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:214 Loss:0.005962766706943512
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:215 Loss:0.005950894672423601
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:216 Loss:0.005939344875514507
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:217 Loss:0.005928473547101021
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:218 Loss:0.0059175072237849236
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:219 Loss:0.005905935540795326
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:220 Loss:0.005895447451621294
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:221 Loss:0.005884058307856321
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:222 Loss:0.005872881971299648
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:223 Loss:0.005861648824065924
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:224 Loss:0.005850630346685648
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:225 Loss:0.005839475430548191
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:226 Loss:0.005828649736940861
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:227 Loss:0.0058274343609809875
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:228 Loss:0.005820303224027157
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:229 Loss:0.005812116898596287
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:230 Loss:0.0058020977303385735
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:231 Loss:0.005792112555354834
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:232 Loss:0.005781951826065779
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:233 Loss:0.005771714262664318
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:234 Loss:0.005761536303907633
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:235 Loss:0.005751294083893299
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:236 Loss:0.005741168279200792
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:237 Loss:0.005734491162002087
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:238 Loss:0.005725291091948748
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:239 Loss:0.00571551825851202
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:240 Loss:0.005705578718334436
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:241 Loss:0.005695647094398737
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:242 Loss:0.005685865413397551
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:243 Loss:0.005676173139363527
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:244 Loss:0.005666328594088554
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:245 Loss:0.005656794179230928
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:246 Loss:0.00564788281917572
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:247 Loss:0.0056382883340120316
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:248 Loss:0.005628745537251234
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:249 Loss:0.005619719624519348
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:250 Loss:0.005668786820024252
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.97      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:251 Loss:0.005676920060068369
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:252 Loss:0.005681631155312061
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:253 Loss:0.005684685427695513
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:254 Loss:0.005687331315129995
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:255 Loss:0.005688648670911789
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:256 Loss:0.005689204670488834
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:257 Loss:0.005689281038939953
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:258 Loss:0.005688809789717197
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:259 Loss:0.00568812433630228
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:260 Loss:0.005686867982149124
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:261 Loss:0.005685276817530394
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:262 Loss:0.005683321040123701
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:263 Loss:0.005681350361555815
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:264 Loss:0.005678895860910416
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:265 Loss:0.005676026921719313
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:266 Loss:0.005672851577401161
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:267 Loss:0.005669681821018457
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:268 Loss:0.005665909964591265
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:269 Loss:0.00566179258748889
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:270 Loss:0.005657258443534374
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:271 Loss:0.005652450956404209
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:272 Loss:0.005647617857903242
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:273 Loss:0.005642772652208805
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:274 Loss:0.005637355614453554
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:275 Loss:0.005631716456264257
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:276 Loss:0.005625819321721792
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:277 Loss:0.005619658622890711
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:278 Loss:0.0056134359911084175
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:279 Loss:0.005607025232166052
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:280 Loss:0.005600451026111841
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:281 Loss:0.005593815818428993
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:282 Loss:0.005587360356003046
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:283 Loss:0.005580628290772438
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:284 Loss:0.005573703441768885
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:285 Loss:0.00556672178208828
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:286 Loss:0.005561081692576408
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:287 Loss:0.005554004106670618
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:288 Loss:0.005547028034925461
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:289 Loss:0.005539803300052881
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:290 Loss:0.005533329211175442
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:291 Loss:0.005526162218302488
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:292 Loss:0.005519015248864889
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:293 Loss:0.00551184406504035
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:294 Loss:0.0055046286433935165
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:295 Loss:0.005497341975569725
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:296 Loss:0.005490094423294067
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:297 Loss:0.005483256187289953
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:298 Loss:0.005476078949868679
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:299 Loss:0.0054763490334153175
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:300 Loss:0.005471113137900829
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:301 Loss:0.005465120542794466
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:302 Loss:0.005458687897771597
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:303 Loss:0.005452060606330633
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:304 Loss:0.005445562768727541
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:305 Loss:0.005439030006527901
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:306 Loss:0.005432182922959328
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:307 Loss:0.005425309296697378
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:308 Loss:0.005418411456048489
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:309 Loss:0.005411586724221706
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:310 Loss:0.005404690746217966
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:311 Loss:0.005398261826485395
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:312 Loss:0.005391689483076334
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:313 Loss:0.005384866148233414
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:314 Loss:0.005378235597163439
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:315 Loss:0.005371590610593557
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:316 Loss:0.0053650992922484875
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:317 Loss:0.005358327645808458
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:318 Loss:0.00535171665251255
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:319 Loss:0.005345039535313845
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:320 Loss:0.005338374990969896
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:321 Loss:0.005331840831786394
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:322 Loss:0.005325317848473787
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:323 Loss:0.005320035852491856
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:324 Loss:0.00531391054391861
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:325 Loss:0.005307759158313274
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:326 Loss:0.005301263183355331
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:327 Loss:0.0052948095835745335
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:328 Loss:0.005288374610245228
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:329 Loss:0.005282261408865452
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:330 Loss:0.00532066123560071
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00  11479271
+           1       0.98      0.99      0.98   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:331 Loss:0.005326045677065849
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:332 Loss:0.005329035688191652
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:333 Loss:0.0053308564238250256
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:334 Loss:0.005331823602318764
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:335 Loss:0.005332079250365496
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:336 Loss:0.005331756547093391
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:337 Loss:0.005330962128937244
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:338 Loss:0.0053296927362680435
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:339 Loss:0.005328045692294836
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:340 Loss:0.005325975827872753
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:341 Loss:0.005323571618646383
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:342 Loss:0.0053208740428090096
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:343 Loss:0.00531792314723134
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:344 Loss:0.005314708221703768
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:345 Loss:0.005311283282935619
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:346 Loss:0.005307661835104227
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:347 Loss:0.00530397891998291
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:348 Loss:0.005300057120621204
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:349 Loss:0.00529607106000185
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:350 Loss:0.005292302928864956
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:351 Loss:0.005288071930408478
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:352 Loss:0.005283576436340809
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:353 Loss:0.005279161501675844
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:354 Loss:0.005274570547044277
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:355 Loss:0.005270085297524929
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:356 Loss:0.005267044994980097
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:357 Loss:0.0052624717354774475
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:358 Loss:0.005257843527942896
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:359 Loss:0.005256728269159794
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:360 Loss:0.005252883303910494
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:361 Loss:0.005248398054391146
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:362 Loss:0.005243801977485418
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:363 Loss:0.005238956771790981
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:364 Loss:0.005234076175838709
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:365 Loss:0.005229387432336807
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:366 Loss:0.005224475171416998
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:367 Loss:0.005219576880335808
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:368 Loss:0.005214798729866743
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      0.99      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:369 Loss:0.005209874827414751
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:370 Loss:0.005204952321946621
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:371 Loss:0.005200090818107128
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:372 Loss:0.005195168312638998
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:373 Loss:0.005204931367188692
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           0.99  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       0.99      0.99      0.99  14333760
+
+Epoch:374 Loss:0.00520550599321723
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:375 Loss:0.005204739049077034
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:376 Loss:0.005203307140618563
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:377 Loss:0.005201197229325771
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:378 Loss:0.005198717582970858
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:379 Loss:0.005195773206651211
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:380 Loss:0.005192513111978769
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:381 Loss:0.005189065355807543
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:382 Loss:0.005185218527913094
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:383 Loss:0.005181348416954279
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:384 Loss:0.005177210550755262
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:385 Loss:0.005173000041395426
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:386 Loss:0.00516886729747057
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:387 Loss:0.00516461580991745
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:388 Loss:0.00516023114323616
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:389 Loss:0.0051557752303779125
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:390 Loss:0.00515138590708375
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:391 Loss:0.005146858748048544
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:392 Loss:0.005142293870449066
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:393 Loss:0.005137795116752386
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:394 Loss:0.005133690312504768
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:395 Loss:0.005129450466483831
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:396 Loss:0.005125062074512243
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:397 Loss:0.005120534915477037
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:398 Loss:0.005115951877087355
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:399 Loss:0.005111337639391422
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:400 Loss:0.005106885451823473
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:401 Loss:0.005102511495351791
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:402 Loss:0.005098219495266676
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:403 Loss:0.005093795713037252
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:404 Loss:0.0050997962243855
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      0.99      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:405 Loss:0.005098267924040556
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:406 Loss:0.005095757078379393
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:407 Loss:0.005092567764222622
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:408 Loss:0.005088868550956249
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:409 Loss:0.005084974225610495
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:410 Loss:0.005080916453152895
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:411 Loss:0.005076777655631304
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:412 Loss:0.005072595551609993
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:413 Loss:0.00506836362183094
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:414 Loss:0.005064183846116066
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:415 Loss:0.005059859249740839
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:416 Loss:0.005055516958236694
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:417 Loss:0.005051654763519764
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:418 Loss:0.005047345068305731
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:419 Loss:0.005043134093284607
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:420 Loss:0.005038802977651358
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:421 Loss:0.00503458920866251
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:422 Loss:0.005030264146625996
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:423 Loss:0.005026025697588921
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:424 Loss:0.005021778400987387
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:425 Loss:0.005017655435949564
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:426 Loss:0.005013410001993179
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:427 Loss:0.005009091459214687
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:428 Loss:0.005005675833672285
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:429 Loss:0.005001637618988752
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:430 Loss:0.0049984208308160305
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:431 Loss:0.004994325805455446
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:432 Loss:0.004990176297724247
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:433 Loss:0.0049860249273478985
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:434 Loss:0.004981950856745243
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:435 Loss:0.004978340119123459
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:436 Loss:0.00497516430914402
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:437 Loss:0.004971158225089312
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:438 Loss:0.004966979846358299
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:439 Loss:0.004962879698723555
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.98      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:440 Loss:0.004959068726748228
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:441 Loss:0.0049550337716937065
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:442 Loss:0.00495097367092967
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:443 Loss:0.004947002045810223
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:444 Loss:0.004943222738802433
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:445 Loss:0.004939527716487646
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:446 Loss:0.0049354578368365765
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:447 Loss:0.004932562354952097
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:448 Loss:0.004929697141051292
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:449 Loss:0.004926387220621109
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:450 Loss:0.004922547377645969
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:451 Loss:0.004918689839541912
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:452 Loss:0.0049147834070026875
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:453 Loss:0.004910964053124189
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:454 Loss:0.004907080437988043
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:455 Loss:0.004903546534478664
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:456 Loss:0.004899725317955017
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:457 Loss:0.004895876161754131
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:458 Loss:0.004892109427601099
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:459 Loss:0.004888242110610008
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:460 Loss:0.004884408321231604
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:461 Loss:0.004880817141383886
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:462 Loss:0.004877881146967411
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:463 Loss:0.004874114412814379
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      0.99      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       1.00      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:464 Loss:0.004870272241532803
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:465 Loss:0.00486652972176671
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:466 Loss:0.004862829577177763
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      0.99  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:467 Loss:0.004859073553234339
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:468 Loss:0.004855900537222624
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+
+Epoch:469 Loss:0.004852138459682465
+Training Stats
+Test Stats
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00  11479271
+           1       0.99      1.00      0.99   2854489
+
+    accuracy                           1.00  14333760
+   macro avg       0.99      1.00      1.00  14333760
+weighted avg       1.00      1.00      1.00  14333760
+

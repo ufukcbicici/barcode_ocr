@@ -37,15 +37,14 @@ def train_unet_detector():
     prior_boxes_path = os.path.join(barcode_model_path, "prior_boxes.sav")
 
     barcode_dataset = BarcodeDataset(dataset_path=barcode_folder_path)
+    barcode_dataset.calculate_text_bounding_boxes(barcodes_with_text_detection_path=barcodes_with_text_detection_path)
 
-    with open(training_images_path, "rb") as f:
-        train_paths = pickle.load(f)
-    with open(test_images_path, "rb") as f:
-        test_paths = pickle.load(f)
+    paths = []
+    for path in barcode_dataset.boundingBoxDict.keys():
+        paths.append(path)
 
     unet = Unet(model_name=model_name, model_path=os.path.join(file_path, "..", "saved_models"),
                 input_shape=input_dims, layer_width=layer_width, layer_depth=layer_depth, label_count=2,
                 dilation_kernel=5, class_weights=class_weights, l2_lambda=l2_lambda)
     unet.build_network()
-
-    unet.train(train_paths=train_paths, test_paths=test_paths, batch_size=batch_size, epoch_count=epoch_count)
+    unet.train(paths=paths, batch_size=batch_size, epoch_count=epoch_count)
