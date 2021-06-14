@@ -9,6 +9,7 @@ from data_handling.text_annotator import TextAnnotator
 from entry_points.test_anomaly_detector import test_anomaly_detector
 from entry_points.test_ssd_text_detector import test_blaze_ssd_detector
 from entry_points.test_unet_detector import test_unet_detector
+from entry_points.test_unet_gmm_text_localizer import test_unet_gmm_text_localizer
 from entry_points.train_anomaly_detector import train_anomaly_detector
 from entry_points.train_gmm_bb_model import train_gmm_bb_likelihood
 from entry_points.train_ssd_text_detector import train_blaze_ssd_detector
@@ -26,4 +27,5 @@ if __name__ == '__main__':
     # test_anomaly_detector()
     # train_unet_detector()
     # test_unet_detector()
-    train_gmm_bb_likelihood()
+    # train_gmm_bb_likelihood()
+    test_unet_gmm_text_localizer()

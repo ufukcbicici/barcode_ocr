@@ -2,6 +2,7 @@ import cv2
 import os
 import shutil
 import numpy as np
+from itertools import chain, combinations
 
 
 class Utils:
@@ -47,7 +48,26 @@ class Utils:
         cv2.waitKey(0)
 
     @staticmethod
+    def show_image_with_pixel_bounding_boxes(image, bb_list, window_name):
+        im = image.copy()
+        for bb_arr in bb_list:
+            # Comment this out; only for visualizing purposes
+            left = int(bb_arr[0])
+            top = int(bb_arr[1])
+            right = int(bb_arr[2])
+            bottom = int(bb_arr[3])
+            cv2.rectangle(im, (left, top), (right, bottom), color=(0, 255, 0))
+        cv2.imshow(window_name, im)
+        cv2.waitKey(0)
+
+    @staticmethod
     def create_directory(path):
         if os.path.isdir(path):
             shutil.rmtree(path)
         os.mkdir(path)
+
+    @staticmethod
+    def powerset(iterable):
+        "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+        s = list(iterable)
+        return list(chain.from_iterable(combinations(s, r) for r in range(len(s) + 1)))

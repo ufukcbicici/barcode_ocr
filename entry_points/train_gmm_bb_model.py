@@ -22,6 +22,7 @@ l2_lambda = 0.00001
 model_epoch = "model_epoch469"
 cluster_count = 5
 dilation_kernel = 5
+gmm_model_name = "gmm_model"
 
 
 def train_gmm_bb_likelihood():
@@ -33,6 +34,7 @@ def train_gmm_bb_likelihood():
     unet_model_path = os.path.join(file_path, "..", "saved_models", model_name)
     training_images_path = os.path.join(unet_model_path, "training_images.sav")
     test_images_path = os.path.join(unet_model_path, "test_images.sav")
+    gmm_model_path = os.path.join(os.path.join(file_path, "..", "saved_models"), gmm_model_name)
 
     with open(training_images_path, "rb") as f:
         train_paths = pickle.load(f)
@@ -46,7 +48,4 @@ def train_gmm_bb_likelihood():
 
     bb_gmm_modeller = BoundingBoxGMMModeller(cluster_count=cluster_count)
     bb_gmm_modeller.train_gmm_model(
-        visual_paths=os.path.join(file_path, "..", "saved_models", model_name, "visual_results_train"),
-        train_paths=train_paths, unet=unet, batch_size=64, dilation_kernel_size=dilation_kernel, verbose=False)
-
-
+        train_paths=train_paths, dilation_kernel_size=dilation_kernel, verbose=False, output_path=gmm_model_path)
